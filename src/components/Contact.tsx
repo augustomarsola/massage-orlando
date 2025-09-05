@@ -51,7 +51,7 @@ export function ContactSection() {
                   WhatsApp
                 </a>
                 <a
-                  href="sms:+14078686023?body=Hello,+I+would+like+to+know+more+about+your+spa+services."
+                  href="sms:+14078686023?&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20spa%20services."
                   className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-blue-300 hover:text-ebony hover:border-blue-300/60 transition tracking-wide"
                   aria-label="Send SMS message"
                 >
