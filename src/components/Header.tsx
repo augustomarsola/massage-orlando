@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-white/70 border-b border-beige/60">
+    <header className="px-4 w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-white/70 border-b border-beige/60">
       <div className="container-wide flex items-center justify-between h-20">
         <Link href="#" className="flex items-center gap-3 group grow-1">
           <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-gold/50 shadow-soft">

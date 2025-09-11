@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="mt-24 bg-ebony text-white pt-16 pb-12">
+    <footer className="mt-24 bg-ebony text-white pt-16 pb-12 px-4">
       <div className="container-wide grid gap-12 md:grid-cols-4">
         <div className="space-y-4 col-span-2">
           <h3 className="font-serif text-2xl text-gold">
