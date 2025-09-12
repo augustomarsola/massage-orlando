@@ -39,16 +39,14 @@ const services: ServiceItem[] = [
     title: "Body Contouring Massage",
     description:
       "Specialized techniques to shape, tone, and improve the appearance of skin and body contours. A signature body treatment at Luxor Day Spa Orlando.",
-    image:
-      "https://images.unsplash.com/photo-1623890343522-34e691b3cbfd?auto=format&fit=crop&w=800&q=60",
+    image: "/body-contouring-massages.jpg",
     category: "Body Treatment",
   },
   {
     title: "Exfoliating Body Polish",
     description:
       "Revitalizing treatment that gently exfoliates and nourishes skin for a radiant glow. Experience body spa Orlando luxury.",
-    image:
-      "https://images.unsplash.com/photo-1601046936114-da4ce1140bd8?auto=format&fit=crop&w=800&q=60",
+    image: "/exfoliating-body-polish.png",
     category: "Body Treatment",
   },
   // Facial Treatments
@@ -56,16 +54,14 @@ const services: ServiceItem[] = [
     title: "Hydrating Facial",
     description:
       "Restores moisture and radiance to the skin, perfect for facial treatments Orlando clients seeking a fresh look.",
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=60",
+    image: "/hydrating-facial.jpg",
     category: "Facial Treatment",
   },
   {
     title: "Anti-Aging Facial",
     description:
       "Targets fine lines and wrinkles with advanced products and techniques. A top choice for day spa Orlando visitors.",
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60",
+    image: "/anti-aging-facial.jpg",
     category: "Facial Treatment",
   },
   // Hair Treatments
@@ -73,8 +69,7 @@ const services: ServiceItem[] = [
     title: "Gentle Wax Hair Removal",
     description:
       "Clean, careful, and comfortable waxing for smooth skin using high-quality products. Hair treatments Orlando available for all skin types.",
-    image:
-      "https://images.unsplash.com/photo-1602777928363-8b14546e0815?auto=format&fit=crop&w=800&q=60",
+    image: "/gentle-wax-hair-removal.jpg",
     category: "Hair Treatment",
   },
   // Beauty Enhancements
@@ -82,8 +77,7 @@ const services: ServiceItem[] = [
     title: "Brow Shaping & Tinting",
     description:
       "Enhance your natural beauty with expert brow shaping and tinting for a polished look.",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=60",
+    image: "/brow-shaping-tinting.jpg",
     category: "Beauty Enhancement",
   },
 ];
@@ -103,9 +97,11 @@ export function ServicesSection() {
         </div>
         <div className="grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <div
+            <a
               key={s.title}
-              className="group card overflow-hidden flex flex-col"
+              href="#contact"
+              aria-label={`Book ${s.title} now, go to contact section`}
+              className="group card overflow-hidden flex flex-col focus:outline-none focus:ring-2 focus:ring-gold"
             >
               <div className="relative h-56 w-full overflow-hidden">
                 <Image
@@ -115,6 +111,15 @@ export function ServicesSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition" />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <span
+                    className="opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-gold text-ebony px-5 py-2 rounded-full text-sm font-semibold tracking-wide shadow-glow border border-yellow-600/30"
+                    aria-hidden="true"
+                  >
+                    Book Now
+                  </span>
+                </div>
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs tracking-wide bg-ebony/80 backdrop-blur-sm text-white border border-white/10">
                   {s.category}
                 </span>
@@ -126,8 +131,14 @@ export function ServicesSection() {
                 <p className="text-sm text-ebony/70 leading-relaxed flex-1">
                   {s.description}
                 </p>
+                <span
+                  className="md:hidden mt-4 inline-block bg-ebony text-white px-4 py-2 rounded-full text-xs font-semibold tracking-wide hover:bg-gold hover:text-ebony transition-colors w-max"
+                  aria-hidden="true"
+                >
+                  Book Now
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -1,3 +1,7 @@
+import { PhoneIcon } from "./icons/PhoneIcon";
+import { WhatsAppIcon } from "./icons/WhatsAppIcon";
+import { SmsIcon } from "./icons/SmsIcon";
+
 export function ContactSection() {
   const address = "5979 Vineland Rd, Suite 304, Orlando, 32819";
 
@@ -15,14 +19,16 @@ export function ContactSection() {
         <div className="absolute bottom-0 right-0 w-[380px] h-[380px] rounded-full gradient-gold blur-3xl" />
       </div>
 
-      <div className="container-wide relative z-10">
+      <div className="container-wide relative z-10 my-6">
         <div className="grid md:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
           {/* Left: Google Map */}
           <div className="order-2 md:order-1">
             <div className="rounded-xl overflow-hidden shadow-2xl shadow-black/20 border border-white/10 bg-black/20">
               <iframe
                 title={`Map to ${address}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  address
+                )}&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-[320px] md:h-[520px]"
@@ -56,26 +62,29 @@ export function ContactSection() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     href="tel:+14078686023"
-                    className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-gold hover:text-ebony hover:border-gold/60 transition tracking-wide"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-gold hover:text-ebony hover:border-gold/60 transition tracking-wide"
                     aria-label="Call Luxor Day Spa Orlando"
                   >
-                    Call
+                    <PhoneIcon className="w-4 h-4" />
+                    <span>Call</span>
                   </a>
                   <a
                     href="https://wa.me/14078686023?text=Hello,+I+would+like+to+book+a+massage+at+Luxor+Day+Spa+Orlando+with+Lidiane."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-green-400 hover:text-ebony hover:border-green-400/60 transition tracking-wide"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-green-400 hover:text-ebony hover:border-green-400/60 transition tracking-wide"
                     aria-label="Open WhatsApp chat"
                   >
-                    WhatsApp
+                    <WhatsAppIcon className="w-4 h-4" />
+                    <span>WhatsApp</span>
                   </a>
                   <a
                     href="sms:+14078686023?&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20spa%20services."
-                    className="px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-blue-300 hover:text-ebony hover:border-blue-300/60 transition tracking-wide"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-blue-300 hover:text-ebony hover:border-blue-300/60 transition tracking-wide"
                     aria-label="Send SMS message"
                   >
-                    SMS
+                    <SmsIcon className="w-4 h-4" />
+                    <span>SMS</span>
                   </a>
                 </div>
               </div>
@@ -113,7 +122,9 @@ export function ContactSection() {
                   Location
                 </p>
                 <a
-                  href={`https://www.google.com/maps?output=search&q=${encodeURIComponent(address)}`}
+                  href={`https://www.google.com/maps?output=search&q=${encodeURIComponent(
+                    address
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="not-italic text-white/80 hover:text-gold leading-relaxed"
@@ -134,4 +145,3 @@ export function ContactSection() {
     </section>
   );
 }
-

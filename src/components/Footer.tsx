@@ -20,7 +20,7 @@ export function Footer() {
               href="tel:+14078686023"
               className="text-lg font-medium hover:text-gold transition-colors"
             >
-              +1 (407) 868-6023
+              (407) 868-6023
             </a>
           </div>
         </div>
