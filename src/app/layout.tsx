@@ -19,6 +19,22 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  openGraph: {
+    title:
+      "Luxor Day Spa Orlando | Luxury Massage & Aesthetic Treatments in Orlando",
+    description:
+      "Professional massage, hair removal, and body treatments by Lidiane Fernandes in Orlando. Luxury, care, and wellness.",
+    url: "https://luxordayspaorlando.com",
+    siteName: "Luxor Day Spa Orlando",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/spa_bg.png",
+        alt: "Luxor Day Spa Orlando – relaxing spa background",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
