@@ -1,39 +1,55 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Source_Sans_3 } from "next/font/google";
+import { Cinzel, Montserrat } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { site } from "@/components/site";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-display",
+  weight: ["500", "600"],
+  display: "swap",
 });
-const sourceSans = Source_Sans_3({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title:
-    "Luxor Day Spa Orlando | Luxury Massage & Aesthetic Treatments in Orlando",
-  description:
-    "Professional massage, hair removal, and body treatments by Lidiane Fernandes in Orlando. Luxury, care, and wellness.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: "Therapeutic Massage in Orlando | Lunelle Spa",
+    template: "%s | Lunelle Spa",
+  },
+  description: site.description,
+  alternates: { canonical: "/" },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/lunelle-symbol.svg",
+    apple: "/lunelle-symbol.svg",
   },
   openGraph: {
-    title:
-      "Luxor Day Spa Orlando | Luxury Massage & Aesthetic Treatments in Orlando",
-    description:
-      "Professional massage, hair removal, and body treatments by Lidiane Fernandes in Orlando. Luxury, care, and wellness.",
-    url: "https://luxordayspaorlando.com",
-    siteName: "Luxor Day Spa Orlando",
+    title: "Therapeutic Massage in Orlando | Lunelle Spa",
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
     type: "website",
     locale: "en_US",
     images: [
       {
         url: "/spa_bg.png",
-        alt: "Luxor Day Spa Orlando – relaxing spa background",
+        width: 1536,
+        height: 1024,
+        alt: "A calm massage room at Lunelle Spa in Orlando",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Therapeutic Massage in Orlando | Lunelle Spa",
+    description: site.description,
+    images: ["/spa_bg.png"],
   },
 };
 
@@ -43,8 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
-      <body className="min-h-screen flex flex-col bg-beige/40">{children}</body>
+    <html lang="en" className={`${cinzel.variable} ${montserrat.variable}`}>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }
