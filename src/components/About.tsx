@@ -6,8 +6,17 @@ export function AboutSection() {
   return (
     <section id="about" className="about-section">
       <div className="container about-panel">
-        <div className="about-mark" aria-hidden="true">
-          <Image src="/lunelle-symbol.svg" alt="" width={320} height={320} />
+        <div className="about-mark">
+          <Image
+            src="/lidiane-fernandes.webp"
+            alt="Lidiane Fernandes at Lunelle Spa in Orlando"
+            fill
+            sizes="(max-width: 860px) 100vw, 38vw"
+            className="about-portrait"
+          />
+          <p className="about-photo-label">
+            Lidiane Fernandes <span>Lunelle Spa</span>
+          </p>
         </div>
         <div className="about-copy">
           <p className="eyebrow">Meet your massage therapist</p>

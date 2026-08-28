@@ -59,7 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${montserrat.variable}`}>
+    <html
+      lang="en"
+      className={`${cinzel.variable} ${montserrat.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body>
         {children}
         <GoogleAnalytics />

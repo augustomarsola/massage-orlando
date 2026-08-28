@@ -555,10 +555,10 @@ section[id] {
 }
 
 .services-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(300px, 0.78fr);
   align-items: end;
-  justify-content: space-between;
-  gap: 44px;
+  gap: clamp(36px, 6vw, 76px);
   margin-bottom: 58px;
 }
 
@@ -794,16 +794,49 @@ section[id] {
 }
 
 .about-mark {
+  position: relative;
+  overflow: hidden;
   min-height: 480px;
-  display: grid;
-  place-items: center;
   background: var(--midnight);
 }
 
-.about-mark img {
-  width: min(72%, 320px);
-  height: auto;
-  border-radius: 50%;
+.about-mark::after {
+  position: absolute;
+  inset: 50% 0 0;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(30, 42, 58, 0.66));
+  pointer-events: none;
+}
+
+.about-mark img.about-portrait {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: 50% 28%;
+}
+
+.about-photo-label {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  left: 28px;
+  z-index: 1;
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--font-display), serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.about-photo-label span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(247, 241, 232, 0.72);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .about-copy {
@@ -1268,6 +1301,30 @@ section[id] {
   }
 }
 
+@media (max-width: 880px) {
+  .services-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-header .section-intro {
+    max-width: 620px;
+    margin-top: 0;
+  }
+
+  .process-grid,
+  .proof-faq-grid,
+  .location-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-card {
+    position: relative;
+    top: auto;
+  }
+}
+
 @media (max-width: 760px) {
   body {
     padding-bottom: 68px;
@@ -1369,11 +1426,8 @@ section[id] {
   }
 
   .offer-grid,
-  .process-grid,
   .about-panel,
-  .proof-faq-grid,
-  .location-grid,
-  .footer-grid {
+  .book-proof-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1396,7 +1450,7 @@ section[id] {
   }
 
   .services-header {
-    display: block;
+    display: grid;
     margin-bottom: 38px;
   }
 
