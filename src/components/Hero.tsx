@@ -1,42 +1,61 @@
 import Image from "next/image";
+import { site } from "./site";
+import { TrackedLink } from "./TrackedLink";
 
 export function Hero() {
   return (
-    <section
-      className="relative h-[90vh] min-h-[640px] flex items-center justify-center"
-      id="hero"
-    >
-      <Image
-        src="/spa_bg.png"
-        alt="Luxury massage spa ambiance"
-        fill
-        priority
-        className="object-cover brightness-[0.55]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
-      <div className="relative z-10 text-center px-6 max-w-3xl">
-        <h1 className="font-serif text-4xl md:text-6xl leading-tight text-white mb-6">
-          <span className="text-gradient-gold">Luxor Day Spa Orlando</span>
-          <br />
-          Luxury Massage & Body Treatments
-        </h1>
-        <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8">
-          Experience personalized therapeutic massage, gentle hair removal, and
-          rejuvenating body care in a refined, tranquil setting in Orlando.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#services"
-            className="px-8 py-3 rounded-full bg-gold text-ebony font-semibold tracking-wide hover:shadow-glow transition"
-          >
-            Explore Services
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-3 rounded-full bg-white/10 text-white font-semibold tracking-wide backdrop-blur-md ring-1 ring-white/30 hover:bg-white/20 transition"
-          >
-            Book Appointment
-          </a>
+    <section className="hero" id="top">
+      <div className="container hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow">Massage &amp; bodywork in Orlando</p>
+          <h1 className="display">
+            Therapeutic massage, personalized to how you feel today.
+          </h1>
+          <p className="hero-lede">
+            Relaxation, focused muscle work, lymphatic bodywork, and calm
+            personal care in a welcoming Orlando studio.
+          </p>
+          <div className="button-row">
+            <TrackedLink
+              href={site.booksy}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-primary"
+              eventName="cta_booksy_clicked"
+              eventParams={{ placement: "hero" }}
+            >
+              Book on Booksy <span aria-hidden="true">↗</span>
+            </TrackedLink>
+            <TrackedLink
+              href={site.smsHref}
+              className="button button-outline"
+              eventName="cta_sms_clicked"
+              eventParams={{ placement: "hero" }}
+            >
+              Text Us for Guidance
+            </TrackedLink>
+          </div>
+          <p className="hero-trust">
+            English + Português · 5979 Vineland Rd · Open 7 days by appointment
+          </p>
+          <p className="hero-transition">Lunelle Spa was formerly Luxor Day Spa Orlando.</p>
+        </div>
+
+        <div className="hero-visual" aria-label="A calm treatment room prepared for a massage">
+          <div className="hero-image-frame">
+            <Image
+              src="/spa_bg.png"
+              alt="Calm massage room prepared for a personalized session"
+              fill
+              priority
+              sizes="(max-width: 760px) 100vw, 42vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="hero-orbit" aria-hidden="true">
+            Care<br />at your<br />pace
+          </div>
+          <span className="hero-scroll-note" aria-hidden="true">Explore Lunelle —</span>
         </div>
       </div>
     </section>

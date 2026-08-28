@@ -1,144 +1,64 @@
-import { PhoneIcon } from "./icons/PhoneIcon";
-import { WhatsAppIcon } from "./icons/WhatsAppIcon";
-import { SmsIcon } from "./icons/SmsIcon";
+import { site } from "./site";
+import { TrackedLink } from "./TrackedLink";
 
 export function ContactSection() {
-  const address = "5979 Vineland Rd, Suite 304, Orlando, 32819";
-
   return (
-    <section
-      id="contact"
-      className="section-padding bg-ebony text-white relative overflow-hidden"
-    >
-      {/* Decorative background accents */}
-      <div
-        className="absolute inset-0 opacity-[0.07] pointer-events-none"
-        aria-hidden="true"
-      >
-        <div className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full gradient-gold blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[380px] h-[380px] rounded-full gradient-gold blur-3xl" />
-      </div>
-
-      <div className="container-wide relative z-10 my-6">
-        <div className="grid md:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
-          {/* Left: Google Map */}
-          <div className="order-2 md:order-1">
-            <div className="rounded-xl overflow-hidden shadow-2xl shadow-black/20 border border-white/10 bg-black/20">
-              <iframe
-                title={`Map to ${address}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  address
-                )}&output=embed`}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-[320px] md:h-[520px]"
-                aria-label="Google Map showing the clinic location"
-              />
-            </div>
+    <section id="location" className="section location-section">
+      <div className="container location-grid">
+        <div className="map-frame">
+          <iframe
+            title="Map to Lunelle Spa in Orlando"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <div className="location-copy">
+          <p className="eyebrow eyebrow-light">Visit Lunelle Spa</p>
+          <h2 className="display">Your calm corner in Orlando.</h2>
+          <div className="location-detail">
+            <small>Address</small>
+            <a href={site.mapsHref} target="_blank" rel="noopener noreferrer">
+              5979 Vineland Rd, Suite 304<br />Orlando, FL 32819 ↗
+            </a>
           </div>
-
-          {/* Right: Contact Details */}
-          <div className="order-1 md:order-2">
-            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-gold leading-tight">
-              Book Your Session
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-lg">
-              Ready to relax, renew, or sculpt? Reach out to schedule an
-              appointment or ask any questions about available services.
-            </p>
-            <div className="space-y-6">
-              <div>
-                <p className="text-sm font-semibold tracking-wide text-white/60 mb-1">
-                  Phone & Messaging
-                </p>
-                <p className="text-2xl font-medium mb-4">
-                  <a
-                    href="tel:+14078686023"
-                    className="hover:text-gold transition-colors"
-                  >
-                    (407) 868-6023
-                  </a>
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="tel:+14078686023"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-gold hover:text-ebony hover:border-gold/60 transition tracking-wide"
-                    aria-label="Call Luxor Day Spa Orlando"
-                  >
-                    <PhoneIcon className="w-4 h-4" />
-                    <span>Call</span>
-                  </a>
-                  <a
-                    href="https://wa.me/14078686023?text=Hello,+I+would+like+to+book+a+massage+at+Luxor+Day+Spa+Orlando+with+Lidiane."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-green-400 hover:text-ebony hover:border-green-400/60 transition tracking-wide"
-                    aria-label="Open WhatsApp chat"
-                  >
-                    <WhatsAppIcon className="w-4 h-4" />
-                    <span>WhatsApp</span>
-                  </a>
-                  <a
-                    href="sms:+14078686023?&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20spa%20services."
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium hover:bg-blue-300 hover:text-ebony hover:border-blue-300/60 transition tracking-wide"
-                    aria-label="Send SMS message"
-                  >
-                    <SmsIcon className="w-4 h-4" />
-                    <span>SMS</span>
-                  </a>
-                </div>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold tracking-wide text-white/60">
-                  Instagram
-                </p>
-                <a
-                  href="https://www.instagram.com/luxordayspaorlando/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white/80 hover:text-gold transition-colors"
-                  aria-label="Open Instagram profile in new tab"
-                >
-                  @luxordayspaorlando
-                </a>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold tracking-wide text-white/60">
-                  Email
-                </p>
-                <a
-                  href="mailto:lidiane.fernandes@live.com"
-                  className="text-white/80 hover:text-gold transition-colors break-all"
-                  aria-label="Send email to Lidiane"
-                >
-                  lidiane.fernandes@live.com
-                </a>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold tracking-wide text-white/60">
-                  Location
-                </p>
-                <a
-                  href={`https://www.google.com/maps?output=search&q=${encodeURIComponent(
-                    address
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="not-italic text-white/80 hover:text-gold leading-relaxed"
-                  aria-label="Open address on Google Maps in new tab"
-                >
-                  5979 Vineland Rd, Suite 304
-                  <br />
-                  Orlando, 32819
-                  <span className="block mt-1 text-[11px] text-white/50">
-                    View on Google Maps
-                  </span>
-                </a>
-              </div>
-            </div>
+          <div className="location-detail">
+            <small>Hours</small>
+            <p>Monday–Saturday · 9:00 AM–7:00 PM<br />Sunday · 10:00 AM–6:00 PM</p>
+          </div>
+          <div className="location-detail">
+            <small>Contact</small>
+            <TrackedLink
+              href={site.phoneHref}
+              eventName="cta_phone_clicked"
+              eventParams={{ placement: "location" }}
+            >
+              {site.phoneDisplay}
+            </TrackedLink>
+            <br />
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </div>
+          <div className="button-row location-actions">
+            <TrackedLink
+              href={site.booksy}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-cream"
+              eventName="cta_booksy_clicked"
+              eventParams={{ placement: "location" }}
+            >
+              View Availability <span aria-hidden="true">↗</span>
+            </TrackedLink>
+            <TrackedLink
+              href={site.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-outline-light"
+              eventName="cta_whatsapp_clicked"
+              eventParams={{ placement: "location" }}
+            >
+              WhatsApp
+            </TrackedLink>
           </div>
         </div>
       </div>
