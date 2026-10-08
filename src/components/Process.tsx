@@ -27,7 +27,7 @@ export function ProcessSection() {
           <p className="eyebrow">What to expect</p>
           <h2 className="section-title display">Booking should feel easy, too.</h2>
           <p className="section-intro">
-            Book directly online, or text first if two services sound similar.
+            Book directly online, or contact Lidiane if two services sound similar.
           </p>
           <div className="button-row process-actions">
             <TrackedLink

@@ -1,5 +1,6 @@
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
+import { ContactLink } from "./ContactLink";
 
 export function MobileActionBar() {
   return (
@@ -13,13 +14,12 @@ export function MobileActionBar() {
       >
         Book
       </TrackedLink>
-      <TrackedLink
-        href={site.smsHref}
-        eventName="cta_sms_clicked"
-        eventParams={{ placement: "mobile_action_bar" }}
+      <ContactLink
+        placement="mobile_action_bar"
+        desktopLabel="Contact"
       >
         Text
-      </TrackedLink>
+      </ContactLink>
     </div>
   );
 }

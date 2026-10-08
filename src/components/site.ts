@@ -2,11 +2,13 @@ export const site = {
   name: "Lunelle Spa",
   tagline: "Therapeutic Massage & Wellness in Orlando",
   description:
-    "Personalized relaxation, deep tissue, lymphatic and bodywork massage in Orlando. Book Lunelle Spa online or text us for help choosing.",
+    "Personalized relaxation, deep tissue and lymphatic massage in Orlando. English, Spanish and Portuguese available. Book Lunelle Spa online.",
   url: "https://lunellespa.com",
   booksy:
     "https://booksy.com/en-us/1474517_lunelle-spa_massage_134763_orlando",
   phoneDisplay: "(407) 868-6023",
+  phoneInternational: "+1 (407) 868-6023",
+  languages: ["English", "Spanish", "Portuguese"],
   phoneHref: "tel:+14078686023",
   smsHref:
     "sms:+14078686023?body=Hi%20Lidiane%2C%20I%20would%20like%20help%20choosing%20a%20massage.",
@@ -69,7 +71,7 @@ export const faqs = [
   {
     question: "Which massage should I book for my first visit?",
     answer:
-      "If you mainly want to relax or you are unsure where to start, the New Client Therapeutic Customized Massage is the simplest option. For focused muscle tension, lymphatic bodywork, or post-op support, text us and we will help you choose the closest service.",
+      "If you mainly want to relax or you are unsure where to start, the New Client Therapeutic Customized Massage is the simplest option. For focused muscle tension, lymphatic bodywork, or post-op support, contact us and we will help you choose the closest service.",
   },
   {
     question: "Is deep tissue massage supposed to hurt?",
@@ -94,7 +96,7 @@ export const faqs = [
   {
     question: "Where is Lunelle Spa located?",
     answer:
-      "We are at 5979 Vineland Rd, Suite 304, Orlando, FL 32819. Text us if you need help finding the suite.",
+      "We are at 5979 Vineland Rd, Suite 304, Orlando, FL 32819. Contact us if you need help finding the suite.",
   },
 ] as const;
 

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { site } from "./site";
-import { TrackedLink } from "./TrackedLink";
+import { ContactLink } from "./ContactLink";
 
 export function AboutSection() {
   return (
@@ -28,17 +27,15 @@ export function AboutSection() {
             right for you.
           </p>
           <p className="about-note">
-            Communication is available in English and Portuguese. If you are
-            unsure what to select in Booksy, send a text before booking.
+            Communication is available in English, Spanish, and Portuguese. If you
+            are unsure what to select in Booksy, contact Lidiane before booking.
           </p>
-          <TrackedLink
-            href={site.smsHref}
+          <ContactLink
             className="text-link"
-            eventName="cta_sms_clicked"
-            eventParams={{ placement: "about" }}
+            placement="about"
           >
             Ask Lidiane <span aria-hidden="true">→</span>
-          </TrackedLink>
+          </ContactLink>
         </div>
       </div>
     </section>
