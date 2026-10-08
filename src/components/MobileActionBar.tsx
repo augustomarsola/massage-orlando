@@ -12,13 +12,13 @@ export function MobileActionBar() {
         eventName="cta_booksy_clicked"
         eventParams={{ placement: "mobile_action_bar" }}
       >
-        Book
+        Book Now
       </TrackedLink>
       <ContactLink
         placement="mobile_action_bar"
-        desktopLabel="Contact"
+        desktopLabel="Contact Us"
       >
-        Text
+        Text Us
       </ContactLink>
     </div>
   );

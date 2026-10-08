@@ -15,7 +15,11 @@ export function ContactSection() {
         </div>
         <div className="location-copy">
           <p className="eyebrow eyebrow-light">Visit Lunelle Spa</p>
-          <h2 className="display">Your calm corner in Orlando.</h2>
+          <h2 className="display">
+            Massage <span className="location-title-phrase">in Orlando,</span>{" "}
+            <span className="location-title-phrase">on Vineland</span> Road.
+          </h2>
+          <p className="location-intro">Appointments available throughout the week. View available times on Booksy.</p>
           <div className="location-detail">
             <small>Address</small>
             <a href={site.mapsHref} target="_blank" rel="noopener noreferrer">
@@ -23,7 +27,7 @@ export function ContactSection() {
             </a>
           </div>
           <div className="location-detail">
-            <small>Hours</small>
+            <small>Hours — By appointment</small>
             <p>Monday–Saturday · 9:00 AM–7:00 PM<br />Sunday · 10:00 AM–6:00 PM</p>
           </div>
           <div className="location-detail">
@@ -47,8 +51,16 @@ export function ContactSection() {
               eventName="cta_booksy_clicked"
               eventParams={{ placement: "location" }}
             >
-              View Availability <span aria-hidden="true">↗</span>
+              Book Now <span aria-hidden="true">↗</span>
             </TrackedLink>
+            <a
+              href={site.mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-outline-light"
+            >
+              Get Directions <span aria-hidden="true">↗</span>
+            </a>
             <TrackedLink
               href={site.whatsappHref}
               target="_blank"

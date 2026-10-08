@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { serviceFamilies, site } from "./site";
 import { TrackedLink } from "./TrackedLink";
+import { ContactLink } from "./ContactLink";
 
 export function ServicesSection() {
   return (
@@ -8,12 +9,11 @@ export function ServicesSection() {
       <div className="container">
         <div className="services-header">
           <div>
-            <p className="eyebrow">Choose by what you need</p>
-            <h2 className="section-title display">Four clear paths to feeling cared for.</h2>
+            <h2 className="section-title display">Massage Services</h2>
           </div>
           <p className="section-intro">
-            You do not need to know the perfect technique before booking. Start
-            with the outcome you want, then Lidiane can adapt the session.
+            Explore relaxation, deep tissue, lymphatic drainage, and body sculpting.
+            View the full menu, prices, and available times on Booksy.
           </p>
         </div>
 
@@ -24,6 +24,17 @@ export function ServicesSection() {
               <div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
+                {service.note && <p className="service-note">{service.note}</p>}
+                <TrackedLink
+                  href={site.booksy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-link service-cta"
+                  eventName="cta_booksy_clicked"
+                  eventParams={{ placement: "service_family", service: service.trackingName }}
+                >
+                  View Services <span aria-hidden="true">↗</span>
+                </TrackedLink>
               </div>
               <p className="service-helper">{service.helper}</p>
               <div className="service-thumb">
@@ -35,18 +46,12 @@ export function ServicesSection() {
                   className="object-cover"
                 />
               </div>
-              <TrackedLink
-                href={site.booksy}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-link service-cta"
-                eventName="cta_booksy_clicked"
-                eventParams={{ placement: "service_family", service: service.title }}
-              >
-                See sessions <span aria-hidden="true">↗</span>
-              </TrackedLink>
             </article>
           ))}
+        </div>
+        <div className="service-contact">
+          Questions about a service?{" "}
+          <ContactLink placement="services_help" desktopLabel="Contact us">Text us</ContactLink>.
         </div>
       </div>
     </section>

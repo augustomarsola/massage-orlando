@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Therapeutic Massage in Orlando | Lunelle Spa",
+    default: "Massage in Orlando | Lunelle Spa",
     template: "%s | Lunelle Spa",
   },
   description: site.description,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     apple: "/lunelle-symbol.svg",
   },
   openGraph: {
-    title: "Therapeutic Massage in Orlando | Lunelle Spa",
+    title: "Massage in Orlando | Lunelle Spa",
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
         url: "/spa_bg.png",
         width: 1536,
         height: 1024,
-        alt: "A calm massage room at Lunelle Spa in Orlando",
+        alt: "Massage room illustration",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Therapeutic Massage in Orlando | Lunelle Spa",
+    title: "Massage in Orlando | Lunelle Spa",
     description: site.description,
     images: ["/spa_bg.png"],
   },

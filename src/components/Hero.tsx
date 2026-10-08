@@ -8,13 +8,13 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <p className="eyebrow">Massage &amp; bodywork in Orlando</p>
+          <p className="eyebrow">Lunelle Spa · Orlando</p>
           <h1 className="display">
-            Therapeutic massage, personalized to how you feel today.
+            Massage in Orlando. Relax and recharge.
           </h1>
           <p className="hero-lede">
-            Relaxation, focused muscle work, lymphatic bodywork, and calm
-            personal care in a welcoming Orlando studio.
+            Take a break from stress and muscle tension. Explore our massage,
+            lymphatic drainage, and body sculpting services in a calm, welcoming space.
           </p>
           <div className="button-row">
             <TrackedLink
@@ -25,28 +25,28 @@ export function Hero() {
               eventName="cta_booksy_clicked"
               eventParams={{ placement: "hero" }}
             >
-              Book on Booksy <span aria-hidden="true">↗</span>
+              Book Now <span aria-hidden="true">↗</span>
             </TrackedLink>
             <ContactLink
               className="button button-outline"
               placement="hero"
-              desktopLabel="Ask Lidiane"
+              desktopLabel="Contact Us"
             >
-              Text Us for Guidance
+              Text Us
             </ContactLink>
           </div>
+          <p className="booking-support">Online booking through Booksy.</p>
           <p className="hero-trust">
             English · <span lang="es">Español</span> · <span lang="pt">Português</span>
-            <br />5979 Vineland Rd · Open 7 days by appointment
+            <br />5979 Vineland Rd · By appointment
           </p>
-          <p className="hero-transition">Lunelle Spa was formerly Luxor Day Spa Orlando.</p>
         </div>
 
-        <div className="hero-visual" aria-label="A calm treatment room prepared for a massage">
+        <div className="hero-visual">
           <div className="hero-image-frame">
             <Image
               src="/spa_bg.png"
-              alt="Calm massage room prepared for a personalized session"
+              alt="Massage room illustration"
               fill
               priority
               sizes="(max-width: 760px) 100vw, 42vw"
@@ -54,7 +54,7 @@ export function Hero() {
             />
           </div>
           <div className="hero-orbit" aria-hidden="true">
-            Care<br />at your<br />pace
+            Time<br />for you
           </div>
         </div>
       </div>
