@@ -7,6 +7,7 @@ type MarketingEvent =
   | "cta_sms_clicked"
   | "cta_whatsapp_clicked"
   | "cta_phone_clicked"
+  | "cta_email_clicked"
   | "package_interest_clicked";
 
 type TrackedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {

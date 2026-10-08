@@ -1,5 +1,6 @@
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
+import { ContactLink } from "./ContactLink";
 import { TrackedSection } from "./TrackedSection";
 
 export function FirstVisit() {
@@ -39,14 +40,12 @@ export function FirstVisit() {
             >
               Book Your First Visit <span aria-hidden="true">↗</span>
             </TrackedLink>
-            <TrackedLink
-              href={site.smsHref}
+            <ContactLink
               className="button button-outline-light"
-              eventName="cta_sms_clicked"
-              eventParams={{ placement: "first_visit" }}
+              placement="first_visit"
             >
               Ask a Question
-            </TrackedLink>
+            </ContactLink>
           </div>
         </div>
       </div>

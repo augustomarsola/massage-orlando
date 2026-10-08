@@ -29,7 +29,7 @@ const localBusinessSchema = {
     latitude: 28.48342,
     longitude: -81.46206,
   },
-  knowsLanguage: ["English", "Portuguese"],
+  knowsLanguage: site.languages,
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

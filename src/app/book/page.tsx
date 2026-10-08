@@ -6,6 +6,7 @@ import { MobileActionBar } from "@/components/MobileActionBar";
 import { ProcessSection } from "@/components/Process";
 import { faqs, serviceFamilies, site } from "@/components/site";
 import { TrackedLink } from "@/components/TrackedLink";
+import { ContactLink } from "@/components/ContactLink";
 
 export const metadata: Metadata = {
   title: "Book a Massage in Orlando",
@@ -39,16 +40,16 @@ export default function BookPage() {
               >
                 View Times on Booksy <span aria-hidden="true">↗</span>
               </TrackedLink>
-              <TrackedLink
-                href={site.smsHref}
+              <ContactLink
                 className="button button-outline-light"
-                eventName="cta_sms_clicked"
-                eventParams={{ placement: "book_hero" }}
+                placement="book_hero"
+                desktopLabel="Ask Lidiane"
               >
                 Text Me for Guidance
-              </TrackedLink>
+              </ContactLink>
             </div>
             <p className="book-microcopy">
+              English · <span lang="es">Español</span> · <span lang="pt">Português</span><br />
               Secure scheduling is completed on Booksy. Prices and availability
               shown there are the current source of truth.
             </p>
@@ -85,7 +86,7 @@ export default function BookPage() {
 
         <section className="section book-proof">
           <div className="container process-grid">
-            <div>
+            <div className="book-proof-heading">
               <p className="eyebrow">Confirmed-client feedback</p>
               <h2 className="section-title display">Read current reviews where appointments are verified.</h2>
             </div>
@@ -142,14 +143,13 @@ export default function BookPage() {
               >
                 View Times on Booksy <span aria-hidden="true">↗</span>
               </TrackedLink>
-              <TrackedLink
-                href={site.smsHref}
+              <ContactLink
                 className="button button-outline"
-                eventName="cta_sms_clicked"
-                eventParams={{ placement: "book_final" }}
+                placement="book_final"
+                desktopLabel="Ask Lidiane"
               >
                 Text for Guidance
-              </TrackedLink>
+              </ContactLink>
             </div>
           </div>
         </section>

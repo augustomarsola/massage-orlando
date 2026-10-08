@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
+import { ContactLink } from "./ContactLink";
 
 export function Footer() {
   return (
@@ -45,13 +46,12 @@ export function Footer() {
               </TrackedLink>
             </li>
             <li>
-              <TrackedLink
-                href={site.smsHref}
-                eventName="cta_sms_clicked"
-                eventParams={{ placement: "footer" }}
+              <ContactLink
+                placement="footer"
+                desktopLabel="Contact Lidiane"
               >
                 Text {site.phoneDisplay}
-              </TrackedLink>
+              </ContactLink>
             </li>
             <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
             <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>

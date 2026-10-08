@@ -14,7 +14,7 @@ export function PageSections() {
       <div className="trust-ribbon" aria-label="Lunelle Spa qualities">
         <div className="container trust-ribbon-inner">
           <span className="trust-item">Personalized pressure</span>
-          <span className="trust-item">English &amp; Portuguese</span>
+          <span className="trust-item">English · <span lang="es">Español</span> · <span lang="pt">Português</span></span>
           <span className="trust-item">Easy online booking</span>
         </div>
       </div>

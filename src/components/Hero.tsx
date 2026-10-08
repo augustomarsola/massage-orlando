@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
+import { ContactLink } from "./ContactLink";
 
 export function Hero() {
   return (
@@ -26,17 +27,17 @@ export function Hero() {
             >
               Book on Booksy <span aria-hidden="true">↗</span>
             </TrackedLink>
-            <TrackedLink
-              href={site.smsHref}
+            <ContactLink
               className="button button-outline"
-              eventName="cta_sms_clicked"
-              eventParams={{ placement: "hero" }}
+              placement="hero"
+              desktopLabel="Ask Lidiane"
             >
               Text Us for Guidance
-            </TrackedLink>
+            </ContactLink>
           </div>
           <p className="hero-trust">
-            English + Português · 5979 Vineland Rd · Open 7 days by appointment
+            English · <span lang="es">Español</span> · <span lang="pt">Português</span>
+            <br />5979 Vineland Rd · Open 7 days by appointment
           </p>
           <p className="hero-transition">Lunelle Spa was formerly Luxor Day Spa Orlando.</p>
         </div>
@@ -55,7 +56,6 @@ export function Hero() {
           <div className="hero-orbit" aria-hidden="true">
             Care<br />at your<br />pace
           </div>
-          <span className="hero-scroll-note" aria-hidden="true">Explore Lunelle —</span>
         </div>
       </div>
     </section>
