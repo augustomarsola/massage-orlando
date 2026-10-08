@@ -26,10 +26,10 @@ export function ContactLink({ children, desktopLabel, className = "", placement 
   async function copyPhone() {
     try {
       await navigator.clipboard.writeText(site.phoneInternational);
-      setCopyStatus("Phone number copied. You can text Lidiane from your phone.");
+      setCopyStatus("Phone number copied.");
       window.gtag?.("event", "contact_phone_copied", { placement });
     } catch {
-      setCopyStatus("Copy is unavailable here. Select the number above and copy it manually.");
+      setCopyStatus("Select the number and copy it manually.");
     }
   }
 
@@ -69,7 +69,7 @@ export function ContactLink({ children, desktopLabel, className = "", placement 
         }}
       >
         <div className="contact-dialog-heading">
-          <p className="eyebrow">Personal guidance</p>
+          <p className="eyebrow">Get in Touch</p>
           <button
             type="button"
             className="contact-dialog-close"
@@ -79,9 +79,9 @@ export function ContactLink({ children, desktopLabel, className = "", placement 
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <h2 id={`${id}-title`}>Contact Lidiane</h2>
+        <h2 id={`${id}-title`}>Contact Us</h2>
         <p id={`${id}-description`}>
-          Not sure which massage to choose? Message us in English, Spanish, or Portuguese.
+          Questions about your appointment? Message us in English, Spanish, or Portuguese.
         </p>
         <TrackedLink
           href={site.whatsappHref}
@@ -93,9 +93,9 @@ export function ContactLink({ children, desktopLabel, className = "", placement 
         >
           Message on WhatsApp <span aria-hidden="true">↗</span>
         </TrackedLink>
-        <p className="contact-dialog-help">WhatsApp works in your browser and may ask you to sign in.</p>
+        <p className="contact-dialog-help">You may need to sign in to WhatsApp Web.</p>
         <div className="contact-phone-option">
-          <label htmlFor={`${id}-phone`}>Prefer to text from your phone?</label>
+          <label htmlFor={`${id}-phone`}>Prefer to call or text from your phone?</label>
           <div className="contact-phone-row">
             <input
               id={`${id}-phone`}
@@ -104,7 +104,7 @@ export function ContactLink({ children, desktopLabel, className = "", placement 
               onFocus={(event) => event.currentTarget.select()}
             />
             <button type="button" className="button button-outline" onClick={copyPhone}>
-              Copy number
+              Copy Number
             </button>
           </div>
           <p className="contact-copy-status" role="status">{copyStatus}</p>

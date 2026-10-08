@@ -12,7 +12,7 @@ type HeaderProps = {
 
 const navigation = [
   { href: "/#services", label: "Services" },
-  { href: "/#first-visit", label: "First Visit" },
+  { href: "/#first-visit", label: "Your Visit" },
   { href: "/#packages", label: "Packages" },
   { href: "/#about", label: "About" },
   { href: "/#location", label: "Location" },
@@ -73,7 +73,7 @@ export function Header({ compact = false }: HeaderProps) {
           eventName="cta_booksy_clicked"
           eventParams={{ placement: compact ? "book_header" : "site_header" }}
         >
-          View Times <span aria-hidden="true">↗</span>
+          Book Now <span aria-hidden="true">↗</span>
         </TrackedLink>
 
         <button
@@ -110,7 +110,7 @@ export function Header({ compact = false }: HeaderProps) {
           eventParams={{ placement: compact ? "book_mobile_menu" : "mobile_menu" }}
           onClick={() => setOpen(false)}
         >
-          Book on Booksy <span aria-hidden="true">↗</span>
+          Book Now <span aria-hidden="true">↗</span>
         </TrackedLink>
       </nav>
     </header>

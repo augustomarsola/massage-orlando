@@ -1,19 +1,21 @@
 export const site = {
   name: "Lunelle Spa",
-  tagline: "Therapeutic Massage & Wellness in Orlando",
+  tagline: "Massage & Wellness · Orlando",
   description:
-    "Personalized relaxation, deep tissue and lymphatic massage in Orlando. English, Spanish and Portuguese available. Book Lunelle Spa online.",
+    "Relax with Swedish or deep tissue massage, lymphatic drainage, and body sculpting at Lunelle Spa in Orlando. View services and book online.",
   url: "https://lunellespa.com",
   booksy:
     "https://booksy.com/en-us/1474517_lunelle-spa_massage_134763_orlando",
+  booksyReviews:
+    "https://booksy.com/en-us/1474517_lunelle-spa_massage_134763_orlando#business-reviews",
   phoneDisplay: "(407) 868-6023",
   phoneInternational: "+1 (407) 868-6023",
   languages: ["English", "Spanish", "Portuguese"],
   phoneHref: "tel:+14078686023",
   smsHref:
-    "sms:+14078686023?body=Hi%20Lidiane%2C%20I%20would%20like%20help%20choosing%20a%20massage.",
+    "sms:+14078686023?body=Hi%20Lidiane%2C%20I%20would%20like%20to%20book%20a%20service.%20I%20found%20you%20on%20your%20website.",
   whatsappHref:
-    "https://wa.me/14078686023?text=Hi%20Lidiane%2C%20I%20would%20like%20help%20choosing%20a%20massage.",
+    "https://wa.me/14078686023?text=Hi%20Lidiane%2C%20I%20would%20like%20to%20book%20a%20service.%20I%20found%20you%20on%20your%20website.",
   email: "contact@lunellespa.com",
   address: "5979 Vineland Rd Suite 304, Orlando, FL 32819",
   addressShort: "5979 Vineland Rd · Suite 304 · Orlando",
@@ -25,41 +27,53 @@ export const site = {
 export const serviceFamilies = [
   {
     number: "01",
-    title: "Customized & Relaxation",
+    trackingName: "Customized & Relaxation",
+    title: "Relaxation Massage",
     description:
-      "For unwinding, general stress, and a calmer full-body experience. A comfortable starting point for first-time clients.",
+      "Unwind with a Swedish, customized, hot stone, or aromatherapy massage. Your comfort and preferred pressure guide the session.",
     image: "/spa_bg.png",
-    imageAlt: "Calm massage room prepared for a personalized session",
-    helper: "Swedish · Customized · Hot Stone · Aromatherapy",
+    imageAlt: "Massage room illustration",
+    helper: "Swedish · Therapeutic Customized · Hot Stone · Aromatherapy",
+    note: "",
   },
   {
     number: "02",
-    title: "Deep Tissue & Recovery",
+    trackingName: "Deep Tissue & Recovery",
+    title: "Deep Tissue & Sports Massage",
     description:
-      "Focused massage for persistent muscle tension or activity-related tightness, with pressure adjusted throughout your session.",
+      "For tight muscles and everyday soreness. Focused massage and assisted stretching, with pressure adjusted to your comfort.",
     image: "/deep_tissue.jpg",
-    imageAlt: "Focused deep tissue massage technique",
-    helper: "Deep Tissue · Sports & Recovery · Assisted Stretching",
+    imageAlt: "Deep tissue massage technique",
+    helper: "Deep Tissue · Sports & Recovery · Massage + Assisted Stretching",
+    note: "",
   },
   {
     number: "03",
-    title: "Lymphatic & Post-Op",
+    trackingName: "Lymphatic & Post-Op",
+    title: "Lymphatic Drainage Massage",
     description:
-      "Gentle or more dynamic drainage-inspired bodywork, including post-op options after clearance from your healthcare provider.",
+      "Explore Manual and Brazilian Lymphatic Drainage, Lymphatic Sculpting, and Post-Op Massage. Each service offers a different approach.",
     image: "/lymphatic_massage.jpg",
-    imageAlt: "Gentle lymphatic bodywork session",
-    helper: "Manual · Brazilian · Sculpting · Post-Op",
+    imageAlt: "Hands performing a massage",
+    helper: "Manual · Brazilian · Lymphatic Sculpting · Post-Op",
+    note: "Post-op appointments require clearance from your healthcare provider.",
   },
   {
     number: "04",
-    title: "Bodywork & Sculpting",
+    trackingName: "Bodywork & Sculpting",
+    title: "Body Sculpting & Wood Therapy",
     description:
-      "Manual massage and wood-therapy techniques for body-focused care and temporary appearance benefits. Results vary.",
+      "Hands-on body treatments with manual massage and wood therapy. Explore individual sessions or combined options.",
     image: "/body-contouring-massages.jpg",
-    imageAlt: "Manual body-focused massage technique",
-    helper: "Body Sculpting · Wood Therapy · Combined Sessions",
+    imageAlt: "Hands performing a back massage",
+    helper: "Body Sculpting · Anti-Cellulite Manual Massage · Wood Therapy · Wood Therapy + Lymphatic Drainage",
+    note: "Results vary. These services are not weight-loss treatments.",
   },
 ] as const;
+
+// Public Booksy snapshot, checked 2026-10-08. Recheck before future releases.
+// Keep the live reviews link visible; these values are not automatically synced.
+export const booksyReviewSummary = { rating: "5.0", count: 2, checkedOn: "2026-10-08" } as const;
 
 export const packages = [
   { title: "Lymphatic Drainage", five: "$550", fiveSaving: "Save $50", ten: "$1,000", tenSaving: "Save $200" },
@@ -69,34 +83,34 @@ export const packages = [
 
 export const faqs = [
   {
-    question: "Which massage should I book for my first visit?",
+    question: "How do I book an appointment?",
     answer:
-      "If you mainly want to relax or you are unsure where to start, the New Client Therapeutic Customized Massage is the simplest option. For focused muscle tension, lymphatic bodywork, or post-op support, contact us and we will help you choose the closest service.",
+      "Choose your service and an available time on Booksy, then follow the steps to confirm your appointment.",
   },
   {
-    question: "Is deep tissue massage supposed to hurt?",
+    question: "Where can I see prices and session lengths?",
     answer:
-      "No. Deep tissue uses firmer, controlled pressure, but it should remain within your comfort. Tell us whenever you want the pressure adjusted.",
+      "The full menu, current prices, session lengths, and available times are listed on Booksy.",
   },
   {
-    question: "Can I skip aromatherapy?",
+    question: "Can the massage pressure be adjusted?",
     answer:
-      "Yes. Aromatherapy in the first-visit offer is optional and can be omitted for fragrance sensitivity or personal preference.",
+      "Yes. Let us know what feels comfortable. Pressure adjustments depend on the service you booked.",
   },
   {
     question: "Do you offer post-op massage?",
     answer:
-      "Yes. Post-op lymphatic and focused bodywork options are available after clearance from your healthcare provider. These services do not replace medical care or follow-up.",
+      "Yes. Post-op lymphatic massage services are available after clearance from your healthcare provider. They do not replace medical care or follow-up.",
   },
   {
-    question: "Are packages required?",
+    question: "Do I need to purchase a package?",
     answer:
-      "No. You can book individual appointments. Packages are optional for clients who already want a consistent series.",
+      "No. You can book a single appointment. Packages are optional for clients planning several visits.",
   },
   {
-    question: "Where is Lunelle Spa located?",
+    question: "What languages do you speak?",
     answer:
-      "We are at 5979 Vineland Rd, Suite 304, Orlando, FL 32819. Contact us if you need help finding the suite.",
+      "You can contact us in English, Spanish, or Portuguese.",
   },
 ] as const;
 

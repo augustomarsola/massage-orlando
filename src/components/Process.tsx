@@ -4,18 +4,18 @@ import { TrackedLink } from "./TrackedLink";
 const steps = [
   {
     number: "01",
-    title: "Choose a starting point",
-    copy: "Select the session that is closest to what you need. It does not have to be perfect.",
+    title: "Choose your service",
+    copy: "Browse the menu and select your massage.",
   },
   {
     number: "02",
-    title: "Share how you feel",
-    copy: "At the beginning, talk through comfort, pressure, priorities, and any relevant limitations.",
+    title: "Pick a time",
+    copy: "View available appointments on Booksy.",
   },
   {
     number: "03",
-    title: "Receive personalized care",
-    copy: "Your session is paced and adjusted around your feedback rather than a one-size-fits-all routine.",
+    title: "Confirm your booking",
+    copy: "Follow the steps on Booksy to confirm your appointment.",
   },
 ] as const;
 
@@ -24,11 +24,7 @@ export function ProcessSection() {
     <section className="section">
       <div className="container process-grid">
         <div>
-          <p className="eyebrow">What to expect</p>
-          <h2 className="section-title display">Booking should feel easy, too.</h2>
-          <p className="section-intro">
-            Book directly online, or contact Lidiane if two services sound similar.
-          </p>
+          <h2 className="section-title display">Book in a few simple steps.</h2>
           <div className="button-row process-actions">
             <TrackedLink
               href={site.booksy}
@@ -38,7 +34,7 @@ export function ProcessSection() {
               eventName="cta_booksy_clicked"
               eventParams={{ placement: "process" }}
             >
-              Open Booksy <span aria-hidden="true">↗</span>
+              Book Now <span aria-hidden="true">↗</span>
             </TrackedLink>
           </div>
         </div>

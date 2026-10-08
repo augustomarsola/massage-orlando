@@ -5,11 +5,10 @@ export function PackagesSection() {
   return (
     <section id="packages" className="section packages-section">
       <div className="container packages-inner">
-        <p className="eyebrow eyebrow-light">For consistent care</p>
-        <h2 className="section-title display">Packages that reward a planned series.</h2>
+        <h2 className="section-title display">Massage Packages</h2>
         <p className="section-intro">
-          These prepaid options are for clients who already know they want a
-          sequence of lymphatic or post-op sessions. Individual visits remain available.
+          Plan your next visits and save with 5- or 10-session lymphatic and post-op
+          packages. Prefer a single appointment? Individual sessions are available.
         </p>
 
         <div className="package-grid">
@@ -39,16 +38,16 @@ export function PackagesSection() {
                   eventName="package_interest_clicked"
                   eventParams={{ placement: "package_card", package: item.title }}
                 >
-                  View in Booksy <span aria-hidden="true">↗</span>
+                  View Packages <span aria-hidden="true">↗</span>
                 </TrackedLink>
               </div>
             </article>
           ))}
         </div>
         <p className="package-note">
-          Packages are prepaid and intended for one client. Ask before purchase
-          if you are unsure which series fits your needs. Post-op services require
-          clearance from your healthcare provider and do not replace medical care.
+          Packages are prepaid for one client. View package details on Booksy.
+          Post-op services require clearance from your healthcare provider and
+          do not replace medical care.
         </p>
       </div>
     </section>

@@ -13,19 +13,19 @@ export function Footer() {
             <Image src="/lunelle-symbol.svg" alt="" width={58} height={58} />
             <span>
               <strong>Lunelle Spa</strong>
-              <span>Therapeutic massage &amp; wellness</span>
+              <span>Massage &amp; Wellness · Orlando</span>
             </span>
           </Link>
           <p className="footer-description">
-            Personalized massage and bodywork in Orlando, with an approach
-            grounded in comfort, clear communication, and thoughtful care.
+            Massage, lymphatic drainage, and body sculpting in Orlando.
+            Personal care in a calm, welcoming space.
           </p>
         </div>
         <div className="footer-column">
           <h3>Explore</h3>
           <ul>
             <li><Link href="/#services">Services</Link></li>
-            <li><Link href="/#first-visit">First Visit</Link></li>
+            <li><Link href="/#first-visit">Your Visit</Link></li>
             <li><Link href="/#packages">Packages</Link></li>
             <li><Link href="/#about">About</Link></li>
             <li><Link href="/#location">Location</Link></li>
@@ -42,15 +42,15 @@ export function Footer() {
                 eventName="cta_booksy_clicked"
                 eventParams={{ placement: "footer" }}
               >
-                Book on Booksy ↗
+                Book Now ↗
               </TrackedLink>
             </li>
             <li>
               <ContactLink
                 placement="footer"
-                desktopLabel="Contact Lidiane"
+                desktopLabel="Contact Us"
               >
-                Text {site.phoneDisplay}
+                Text Us
               </ContactLink>
             </li>
             <li><a href={`mailto:${site.email}`}>{site.email}</a></li>

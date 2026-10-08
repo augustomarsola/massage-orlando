@@ -1,32 +1,16 @@
-import { faqs, site } from "./site";
-import { TrackedLink } from "./TrackedLink";
+import { faqs } from "./site";
+import { BooksyReviews } from "./BooksyReviews";
 
 export function ReviewsFaq() {
   return (
     <section className="section">
       <div className="container proof-faq-grid">
         <aside className="proof-card">
-          <p className="eyebrow">Confirmed-client feedback</p>
-          <div className="proof-score proof-score-booksy">Booksy</div>
-          <div className="proof-stars" aria-hidden="true">— ◇ —</div>
-          <p>
-            Visit the Lunelle profile to read the latest feedback connected to
-            confirmed appointments.
-          </p>
-          <TrackedLink
-            href={site.booksy}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link"
-            eventName="cta_booksy_clicked"
-            eventParams={{ placement: "reviews" }}
-          >
-            Read current reviews <span aria-hidden="true">↗</span>
-          </TrackedLink>
+          <h2 className="review-title display">Client Reviews</h2>
+          <BooksyReviews placement="reviews" />
         </aside>
         <div>
-          <p className="eyebrow">Common questions</p>
-          <h2 className="section-title display">A little clarity before you book.</h2>
+          <h2 className="section-title display">Frequently Asked Questions</h2>
           <div className="faq-list faq-list-spaced">
             {faqs.map((item) => (
               <details className="faq-item" key={item.question}>

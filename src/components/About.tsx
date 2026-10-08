@@ -18,23 +18,21 @@ export function AboutSection() {
           </p>
         </div>
         <div className="about-copy">
-          <p className="eyebrow">Meet your massage therapist</p>
-          <h2 className="display">Thoughtful care from the first question to the final minute.</h2>
+          <p className="eyebrow">About Lunelle Spa</p>
+          <h2 className="display">Personal care. A welcoming space.</h2>
           <p>
-            Lidiane offers one-on-one massage and bodywork in a calm Orlando
-            setting. Each visit begins with a brief conversation about how you
-            feel, what you want from the session, and the pressure that feels
-            right for you.
+            We believe a good massage starts with care and comfort. Every visit
+            includes personal attention and a chance to share your pressure preferences.
           </p>
           <p className="about-note">
-            Communication is available in English, Spanish, and Portuguese. If you
-            are unsure what to select in Booksy, contact Lidiane before booking.
+            You can speak with us in English, Spanish, or Portuguese.
           </p>
           <ContactLink
             className="text-link"
             placement="about"
+            desktopLabel={<>Contact Us <span aria-hidden="true">→</span></>}
           >
-            Ask Lidiane <span aria-hidden="true">→</span>
+            Text Us <span aria-hidden="true">→</span>
           </ContactLink>
         </div>
       </div>

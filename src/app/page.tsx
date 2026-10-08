@@ -9,9 +9,8 @@ const localBusinessSchema = {
   "@type": "DaySpa",
   "@id": `${site.url}/#business`,
   name: site.name,
-  alternateName: "Luxor Day Spa Orlando",
   url: site.url,
-  image: `${site.url}/spa_bg.png`,
+  image: `${site.url}/lidiane-fernandes.webp`,
   logo: `${site.url}/lunelle-symbol.svg`,
   telephone: "+1-407-868-6023",
   email: site.email,
@@ -47,7 +46,7 @@ const localBusinessSchema = {
   sameAs: [site.booksy],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Massage and bodywork services",
+    name: "Massage Services",
     itemListElement: serviceFamilies.map((service) => ({
       "@type": "Offer",
       itemOffered: {
