@@ -117,4 +117,6 @@ Also review the homepage and `/book` at mobile and desktop widths, verify extern
 
 ## Deployment
 
+Cinzel and Montserrat are bundled as Latin variable WOFF2 fonts in `src/app/fonts` and loaded through `next/font/local`. Their SIL Open Font License files are included alongside them. This preserves the brand fonts and supported weights while removing Google Fonts requests during builds. It avoids the extensionless `/l/font?kit=...` response that caused the October 16 production build to fail in `next/font/google` ([upstream issue](https://github.com/vercel/next.js/issues/99114)). Keep these local font files in the deployment.
+
 The Vercel project deploys the `main` branch to [lunellespa.com](https://lunellespa.com/). Configure `NEXT_PUBLIC_GA_MEASUREMENT_ID` in the Vercel **Production** environment and redeploy after changing it because public environment variables are embedded at build time.
