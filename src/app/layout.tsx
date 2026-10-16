@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Cinzel, Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { site } from "@/components/site";
 import "./globals.css";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
+const cinzel = localFont({
+  src: "./fonts/Cinzel-latin.woff2",
   variable: "--font-display",
-  weight: ["500", "600"],
+  weight: "500 600",
+  style: "normal",
   display: "swap",
+  adjustFontFallback: "Times New Roman",
 });
-const montserrat = Montserrat({
-  subsets: ["latin"],
+const montserrat = localFont({
+  src: "./fonts/Montserrat-latin.woff2",
   variable: "--font-body",
-  weight: ["300", "400", "500", "600"],
+  weight: "300 600",
+  style: "normal",
   display: "swap",
+  adjustFontFallback: "Arial",
 });
 
 export const metadata: Metadata = {
