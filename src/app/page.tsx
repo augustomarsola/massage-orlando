@@ -2,7 +2,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { PageSections } from "@/components/PageSections";
-import { serviceFamilies, site } from "@/components/site";
+import { serviceFamilies, site, skinCareService } from "@/components/site";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -46,8 +46,8 @@ const localBusinessSchema = {
   sameAs: [site.booksy],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Massage Services",
-    itemListElement: serviceFamilies.map((service) => ({
+    name: "Massage & Skin Care Services",
+    itemListElement: [...serviceFamilies, skinCareService].map((service) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",

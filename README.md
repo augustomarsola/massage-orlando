@@ -72,6 +72,12 @@ Booksy remains the source of truth for completed appointments. Website CTA event
 
 The October 8 copy revision replaces the `$105` first-visit spotlight with **Your Visit**. It no longer emits `offer_viewed` or `offer: new_client_105`; previous analytics history is unaffected. This does not cancel or reprice the Booksy service. Service-family click parameters retain their previous `service` values through `trackingName`, even though public headings are clearer. Review links keep their existing event/placements (`reviews`, `book_reviews`); distinguish those from booking intent in reporting.
 
+### Skin Care service extension — October 16, 2026
+
+The homepage and `/book` retain their four massage groups and present **Microneedling** separately under **Skin Care**. `SkinCareServices` shares the presentation across both routes; `skinCareService` in `src/components/site.ts` holds the copy and booking destination. Its tracked Booksy clicks use `service: Microneedling` with placements `service_skin_care` and `book_skin_care`. These are booking-intent events, not completed appointments.
+
+The owner will add the service in Booksy. Before release, confirm it is publicly bookable and check its price and duration there. The website uses the existing profile URL until a direct service URL can be verified; do not invent a service ID, price, duration, availability, or add-on. Other facials remain deferred. Copy describes microneedling only: the supplied article's PDRN combination is not a confirmed Lunelle protocol. No treatment photograph is shown until suitable real media is available.
+
 ### Client reviews
 
 `booksyReviewSummary` in `src/components/site.ts` records a manually checked public Booksy snapshot: **5.0 / 5 from 2 reviews**, checked October 8, 2026. Both routes display the rating and direct **Read Reviews** link, without displaying a review-count sentence. The count remains internal evidence, not a claim of a larger review base. This is not automatically synchronized: recheck rating and count before future releases. Both links open the actual `#business-reviews` section. Do not invent quotes or add self-serving review markup to the local-business schema.

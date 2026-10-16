@@ -8,16 +8,17 @@ import { faqs, serviceFamilies, site } from "@/components/site";
 import { TrackedLink } from "@/components/TrackedLink";
 import { ContactLink } from "@/components/ContactLink";
 import { BooksyReviews } from "@/components/BooksyReviews";
+import { SkinCareServices } from "@/components/SkinCareServices";
 
 const bookDescription =
-  "Book your massage at Lunelle Spa in Orlando. View services, prices, and available times on Booksy. Contact us in English, Spanish, or Portuguese.";
+  "Book massage or microneedling at Lunelle Spa in Orlando. View services, prices, and available times on Booksy. English, Spanish, and Portuguese spoken.";
 
 export const metadata: Metadata = {
-  title: "Book a Massage in Orlando",
+  title: "Book Massage & Skin Care in Orlando",
   description: bookDescription,
   alternates: { canonical: "/book" },
   openGraph: {
-    title: "Book a Massage in Orlando | Lunelle Spa",
+    title: "Book Massage & Skin Care in Orlando | Lunelle Spa",
     description: bookDescription,
     url: `${site.url}/book`,
     siteName: site.name,
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book a Massage in Orlando | Lunelle Spa",
+    title: "Book Massage & Skin Care in Orlando | Lunelle Spa",
     description: bookDescription,
     images: ["/spa_bg.png"],
   },
@@ -41,10 +42,10 @@ export default function BookPage() {
         <section className="book-hero">
           <div className="container book-hero-inner">
             <p className="eyebrow eyebrow-light">Lunelle Spa · Orlando</p>
-            <h1 className="display">Book your massage in Orlando.</h1>
+            <h1 className="display">Book your visit in Orlando.</h1>
             <p>
-              Choose your service and a time that works for you. View our full
-              menu, prices, and available appointments on Booksy.
+              Choose a massage or microneedling appointment. View our full menu,
+              prices, and available times on Booksy.
             </p>
             <div className="button-row">
               <TrackedLink
@@ -100,6 +101,7 @@ export default function BookPage() {
                 </article>
               ))}
             </div>
+            <SkinCareServices placement="book_skin_care" />
             <div className="service-contact">
               Questions about a service?{" "}
               <ContactLink placement="book_services_help" desktopLabel="Contact us">Text us</ContactLink>.
