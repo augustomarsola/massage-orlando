@@ -2,6 +2,7 @@ import Image from "next/image";
 import { serviceFamilies, site } from "./site";
 import { TrackedLink } from "./TrackedLink";
 import { ContactLink } from "./ContactLink";
+import { SkinCareServices } from "./SkinCareServices";
 
 export function ServicesSection() {
   return (
@@ -49,6 +50,7 @@ export function ServicesSection() {
             </article>
           ))}
         </div>
+        <SkinCareServices placement="service_skin_care" />
         <div className="service-contact">
           Questions about a service?{" "}
           <ContactLink placement="services_help" desktopLabel="Contact us">Text us</ContactLink>.

@@ -5,7 +5,7 @@ const steps = [
   {
     number: "01",
     title: "Choose your service",
-    copy: "Browse the menu and select your massage.",
+    copy: "Browse the menu and select your service.",
   },
   {
     number: "02",

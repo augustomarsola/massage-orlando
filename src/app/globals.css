@@ -631,6 +631,41 @@ section[id] {
   font-weight: 600;
 }
 
+.skin-care-services {
+  margin-top: clamp(56px, 6vw, 80px);
+}
+
+.skin-care-heading {
+  margin: 0 0 26px;
+  color: var(--midnight);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.skin-care-service {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  align-items: center;
+  gap: 36px;
+  padding-block: 30px;
+  border-block: 1px solid var(--line);
+}
+
+.skin-care-booking p {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: var(--text-label);
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .skin-care-service {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
 .packages-section {
   position: relative;
   background: var(--midnight-deep);

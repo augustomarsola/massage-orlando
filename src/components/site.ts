@@ -2,7 +2,7 @@ export const site = {
   name: "Lunelle Spa",
   tagline: "Massage & Wellness · Orlando",
   description:
-    "Relax with Swedish or deep tissue massage, lymphatic drainage, and body sculpting at Lunelle Spa in Orlando. View services and book online.",
+    "Explore massage, lymphatic drainage, body sculpting, and microneedling at Lunelle Spa in Orlando. View service details and book online with Booksy.",
   url: "https://lunellespa.com",
   booksy:
     "https://booksy.com/en-us/1474517_lunelle-spa_massage_134763_orlando",
@@ -70,6 +70,17 @@ export const serviceFamilies = [
     note: "Results vary. These services are not weight-loss treatments.",
   },
 ] as const;
+
+// Keep the verified profile URL until the new service has a verified direct link.
+// Price, duration, and availability remain in Booksy.
+export const skinCareService = {
+  title: "Microneedling",
+  trackingName: "Microneedling",
+  description:
+    "A facial skin treatment to improve the appearance of uneven texture and fine lines.",
+  note: "Results and recovery time vary. Contact us with questions before booking.",
+  bookingUrl: site.booksy,
+} as const;
 
 // Public Booksy snapshot, checked 2026-10-08. Recheck before future releases.
 // Keep the live reviews link visible; these values are not automatically synced.
