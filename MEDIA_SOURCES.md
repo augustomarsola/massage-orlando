@@ -1,5 +1,28 @@
 # Real clinic photography — October 18, 2026
 
+## Refinement v3 — October 23, 2026 (local only)
+
+Owner requested further softening of forehead/neck expression lines and neater hair, a more centered hero without the pink appliance, and warmer room lighting with visibly stretched bedding and tidier curtains. Three independent built-in image edits were inspected; no API/CLI fallback. V3 supersedes the v2 assets below in the current preview:
+
+- `lidiane-hero-retouched-v3.webp` — 900×1254 lossless crop (0,0,900,1254) from the edited 1254px square. Appliance and its small leaning sign removed generatively; large wall sign/6023 preserved visually. Face/neck lines further softened; watch remains dark. Framing at 50% 25% places the subject more centrally.
+- `lunelle-room-prepared-v3.webp` — 1177×1337, warmer lighting and owner-requested generative fabric cleanup. Existing room/table/shelving retained visually. This is retouched marketing photography, not an untouched documentary record. No additional CSS warmth is stacked on the edited room.
+- `lidiane-about-retouched-v3.webp` — 992×1586, further localized line softening and hair tidying, prior appliance-free crop retained. Portraits delivered losslessly without upscaling; generative detail is not recovered native camera resolution.
+
+Masters, exact prompts and exports: marketing `outputs/retouch-2026-10-23/v3/`, `RETOQUES_SITE_2026-10-23.md`. Prior versions/originals preserved. Lint/build passed; both pages checked at seven widths 390–2560px, DPR 2, with no page errors, failed images or horizontal overflow. Screenshots inspected for framing, face/hair, room preparation and warmth; QA in `outputs/retouch-2026-10-23/qa-v3/`. Local preview restarted on port 3102. No publication, commit or PR in this round; owner/Lidiane visual approval pending.
+
+## Portrait retouch and framing revision — October 23, 2026 (local approval pending)
+
+Owner requested subtle portrait retouching, watch screen off, tidier hair, softer facial shadows/neck lines; larger and cohesive service thumbnails; room crop excluding right cabinet; About crop excluding pink appliance. Separate branch `codex/lunelle-photo-retouch`; not deployed.
+
+- `lidiane-hero-retouched-v2.webp`: built-in image-edit result from IMG_0274 native square source; 1254×1254 lossless WebP, no upscaling, direct delivery. Hair tip tidied, watch dark, shadows/lines softened. Unlike the earlier purely photographic crop, this version contains owner-requested generative retouching. Visual approval of likeness remains necessary; no claim of unchanged pixels or recovered native detail.
+- `lidiane-about-retouched-v2.webp`: independent built-in edit from corrected IMG_0317; crop (30,60,850,1360) from 1086×1448 output, excluding the pink appliance. Direct lossless delivery. Mobile focal position adjusted to preserve hair/headroom.
+- `lunelle-room-focused-v2.webp`: non-generative native crop (90,150,1220,1386) of corrected room photo, excluding the right cabinet/pink appliance and keeping the treatment table/tall left shelving. Applied to home visit section and booking room image/metadata. Display warmth is reversible CSS.
+- All four service thumbnails share the same warm-muted filter, 220×150 desktop, 180×150 tablet, existing 190px mobile height. Their underlying lighting/composition still differ; no new procedures inferred from photos.
+
+Original images and prior exports preserved. Final masters, exact built-in prompts, provenance/export scripts and QA are in the marketing repository's `outputs/retouch-2026-10-23/` and `RETOQUES_SITE_2026-10-23.md`. No CLI/API image generation used.
+
+Validation: lint/build passed; both routes checked at 390/768/1024/1440/1602/1920/2560 CSS px, DPR 2, without page errors, failed images or horizontal overflow. Actual screenshots inspected for hero, About, services and room; mobile About headroom corrected and rechecked. Local preview port 3102 restarted; no commit, PR or production deployment for this round.
+
 ## Hero revision — October 23, 2026
 
 ### Follow-up: native hero delivery and female-model service photo

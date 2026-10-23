@@ -45,7 +45,7 @@ export function Hero() {
         <div className="hero-visual">
           <div className="hero-image-frame">
             <Image
-              src="/images/capture-2026-10-18/lidiane-hero-0274-hq.webp"
+              src="/images/capture-2026-10-18/lidiane-hero-retouched-v3.webp"
               alt="Lidiane at Lunelle Spa in Orlando"
               fill
               priority

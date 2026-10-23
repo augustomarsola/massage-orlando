@@ -34,10 +34,10 @@ export function YourVisit() {
         <div className="visit-details">
           <figure className="visit-room-photo">
             <Image
-              src="/images/capture-2026-10-18/lunelle-treatment-room-hq.webp"
+              src="/images/capture-2026-10-18/lunelle-room-prepared-v3.webp"
               alt="The treatment room at Lunelle Spa, with the massage table ready for a visit"
-              width={2048}
-              height={1536}
+              width={1177}
+              height={1337}
               quality={90}
               sizes="(max-width: 880px) 100vw, 540px"
             />
