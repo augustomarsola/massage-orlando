@@ -44,7 +44,7 @@ export function ServicesSection() {
                   quality={90}
                   alt={service.imageAlt}
                   fill
-                  sizes="(max-width: 760px) 100vw, 190px"
+                  sizes="(max-width: 760px) 100vw, (max-width: 1020px) 180px, 220px"
                   className="object-cover"
                 />
               </div>

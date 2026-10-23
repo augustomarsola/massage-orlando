@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/images/capture-2026-10-18/lunelle-treatment-room-hq.webp", width: 2048, height: 1536, alt: "The treatment room at Lunelle Spa in Orlando" }],
+    images: [{ url: "/images/capture-2026-10-18/lunelle-room-prepared-v3.webp", width: 1177, height: 1337, alt: "The treatment room at Lunelle Spa in Orlando" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Book Massage & Skin Care in Orlando | Lunelle Spa",
     description: bookDescription,
-    images: ["/images/capture-2026-10-18/lunelle-treatment-room-hq.webp"],
+    images: ["/images/capture-2026-10-18/lunelle-room-prepared-v3.webp"],
   },
 };
 
@@ -75,7 +75,7 @@ export default function BookPage() {
             </div>
             <figure className="book-room-photo">
               <Image
-                src="/images/capture-2026-10-18/lunelle-treatment-room-hq.webp"
+                src="/images/capture-2026-10-18/lunelle-room-prepared-v3.webp"
                 alt="The real treatment room at Lunelle Spa in Orlando"
                 fill
                 priority

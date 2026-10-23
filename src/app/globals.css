@@ -409,7 +409,7 @@ section[id] {
 }
 
 .hero-image-frame img {
-  object-position: 30% 50%;
+  object-position: 50% 25%;
   filter: sepia(0.05) saturate(0.98) contrast(1.015);
 }
 
@@ -488,6 +488,10 @@ section[id] {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 65%;
+  filter: none;
 }
 
 .visit-copy {
@@ -553,7 +557,7 @@ section[id] {
 
 .service-row {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1.2fr) minmax(0, 0.8fr) 170px;
+  grid-template-columns: 44px minmax(0, 1.2fr) minmax(0, 0.8fr) 220px;
   align-items: center;
   gap: 28px;
   padding-block: 30px;
@@ -595,14 +599,14 @@ section[id] {
 
 .service-thumb {
   position: relative;
-  height: 118px;
+  height: 150px;
   overflow: hidden;
   border-radius: 999px;
   background: var(--taupe);
 }
 
 .service-thumb img {
-  filter: saturate(0.72) contrast(0.94);
+  filter: sepia(0.1) saturate(0.76) contrast(0.98) brightness(1.02);
   transition: transform 500ms ease;
 }
 
@@ -611,7 +615,6 @@ section[id] {
 }
 
 .service-thumb-real img {
-  filter: sepia(0.05) saturate(0.98) contrast(1.015);
   object-position: 50% 50%;
 }
 
@@ -865,6 +868,7 @@ section[id] {
   border-radius: 0;
   object-fit: cover;
   object-position: 44% 28%;
+  filter: sepia(0.04) saturate(0.96) contrast(1.015);
 }
 
 .about-photo-label {
@@ -1242,7 +1246,8 @@ section[id] {
 
 .book-room-photo img {
   object-fit: cover;
-  object-position: 48% 50%;
+  object-position: 50% 65%;
+  filter: none;
 }
 
 .book-hero h1 {
@@ -1433,7 +1438,7 @@ section[id] {
   }
 
   .service-row {
-    grid-template-columns: 40px minmax(0, 1fr) 150px;
+    grid-template-columns: 40px minmax(0, 1fr) 180px;
   }
 
   .service-helper {
@@ -1617,6 +1622,10 @@ section[id] {
 
   .about-mark {
     min-height: 330px;
+  }
+
+  .about-mark img.about-portrait {
+    object-position: 44% 10%;
   }
 
   .about-copy {
