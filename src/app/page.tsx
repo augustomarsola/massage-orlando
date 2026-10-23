@@ -10,7 +10,7 @@ const localBusinessSchema = {
   "@id": `${site.url}/#business`,
   name: site.name,
   url: site.url,
-  image: `${site.url}/lidiane-fernandes.webp`,
+  image: `${site.url}/images/capture-2026-10-18/lunelle-preparing-room-hq.webp`,
   logo: `${site.url}/lunelle-symbol.svg`,
   telephone: "+1-407-868-6023",
   email: site.email,

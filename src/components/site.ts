@@ -31,8 +31,8 @@ export const serviceFamilies = [
     title: "Relaxation Massage",
     description:
       "Unwind with a Swedish, customized, hot stone, or aromatherapy massage. Your comfort and preferred pressure guide the session.",
-    image: "/spa_bg.png",
-    imageAlt: "Massage room illustration",
+    image: "/images/capture-2026-10-18/lunelle-massage-model-0354-hq.webp",
+    imageAlt: "A massage session with a female model at Lunelle Spa",
     helper: "Swedish · Therapeutic Customized · Hot Stone · Aromatherapy",
     note: "",
   },

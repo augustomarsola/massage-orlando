@@ -38,9 +38,10 @@ export function ServicesSection() {
                 </TrackedLink>
               </div>
               <p className="service-helper">{service.helper}</p>
-              <div className="service-thumb">
+              <div className={`service-thumb${service.number === "01" ? " service-thumb-real" : ""}`}>
                 <Image
                   src={service.image}
+                  quality={90}
                   alt={service.imageAlt}
                   fill
                   sizes="(max-width: 760px) 100vw, 190px"

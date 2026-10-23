@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactSection } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -24,13 +25,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/spa_bg.png", width: 1536, height: 1024, alt: "Massage room illustration" }],
+    images: [{ url: "/images/capture-2026-10-18/lunelle-treatment-room-hq.webp", width: 2048, height: 1536, alt: "The treatment room at Lunelle Spa in Orlando" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Book Massage & Skin Care in Orlando | Lunelle Spa",
     description: bookDescription,
-    images: ["/spa_bg.png"],
+    images: ["/images/capture-2026-10-18/lunelle-treatment-room-hq.webp"],
   },
 };
 
@@ -40,36 +41,48 @@ export default function BookPage() {
       <Header compact />
       <main>
         <section className="book-hero">
-          <div className="container book-hero-inner">
-            <p className="eyebrow eyebrow-light">Lunelle Spa · Orlando</p>
-            <h1 className="display">Book your visit in Orlando.</h1>
-            <p>
-              Choose a massage or microneedling appointment. View our full menu,
-              prices, and available times on Booksy.
-            </p>
-            <div className="button-row">
-              <TrackedLink
-                href={site.booksy}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button-cream"
-                eventName="cta_booksy_clicked"
-                eventParams={{ placement: "book_hero" }}
-              >
-                Book Now <span aria-hidden="true">↗</span>
-              </TrackedLink>
-              <ContactLink
-                className="button button-outline-light"
-                placement="book_hero"
-                desktopLabel="Contact Us"
-              >
-                Text Us
-              </ContactLink>
+          <div className="container book-hero-layout">
+            <div className="book-hero-inner">
+              <p className="eyebrow eyebrow-light">Lunelle Spa · Orlando</p>
+              <h1 className="display">Book your visit in Orlando.</h1>
+              <p>
+                Choose a massage or microneedling appointment. View our full menu,
+                prices, and available times on Booksy.
+              </p>
+              <div className="button-row">
+                <TrackedLink
+                  href={site.booksy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-cream"
+                  eventName="cta_booksy_clicked"
+                  eventParams={{ placement: "book_hero" }}
+                >
+                  Book Now <span aria-hidden="true">↗</span>
+                </TrackedLink>
+                <ContactLink
+                  className="button button-outline-light"
+                  placement="book_hero"
+                  desktopLabel="Contact Us"
+                >
+                  Text Us
+                </ContactLink>
+              </div>
+              <p className="book-microcopy">
+                Online booking through Booksy.<br />
+                English · <span lang="es">Español</span> · <span lang="pt">Português</span>
+              </p>
             </div>
-            <p className="book-microcopy">
-              Online booking through Booksy.<br />
-              English · <span lang="es">Español</span> · <span lang="pt">Português</span>
-            </p>
+            <figure className="book-room-photo">
+              <Image
+                src="/images/capture-2026-10-18/lunelle-treatment-room-hq.webp"
+                alt="The real treatment room at Lunelle Spa in Orlando"
+                fill
+                priority
+                quality={95}
+                sizes="(max-width: 880px) 100vw, 850px"
+              />
+            </figure>
           </div>
         </section>
 
