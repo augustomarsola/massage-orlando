@@ -409,14 +409,16 @@ section[id] {
 }
 
 .hero-image-frame img {
-  filter: saturate(0.68) brightness(0.84) contrast(0.92);
+  object-position: 30% 50%;
+  filter: sepia(0.05) saturate(0.98) contrast(1.015);
 }
 
 .hero-image-frame::after {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, rgba(16, 33, 59, 0.03), rgba(16, 33, 59, 0.34));
+  background: linear-gradient(180deg, transparent 65%, rgba(16, 33, 59, 0.08));
+  pointer-events: none;
 }
 
 .hero-orbit {
@@ -474,6 +476,18 @@ section[id] {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   gap: clamp(36px, 7vw, 96px);
+}
+
+.visit-room-photo {
+  margin: 0 0 28px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.visit-room-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .visit-copy {
@@ -594,6 +608,11 @@ section[id] {
 
 .service-row:hover .service-thumb img {
   transform: scale(1.05);
+}
+
+.service-thumb-real img {
+  filter: sepia(0.05) saturate(0.98) contrast(1.015);
+  object-position: 50% 50%;
 }
 
 .service-cta {
@@ -845,7 +864,7 @@ section[id] {
   height: 100%;
   border-radius: 0;
   object-fit: cover;
-  object-position: 50% 28%;
+  object-position: 44% 28%;
 }
 
 .about-photo-label {
@@ -1009,8 +1028,23 @@ section[id] {
   border: 1px solid var(--line);
 }
 
+.location-visual {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.location-building-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .map-frame {
-  min-height: 540px;
+  flex: 1;
+  min-height: 320px;
 }
 
 .map-frame iframe {
@@ -1187,6 +1221,28 @@ section[id] {
   position: relative;
   z-index: 1;
   max-width: 880px;
+}
+
+.book-hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.book-room-photo {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 46% 46% 16px 16px;
+}
+
+.book-room-photo img {
+  object-fit: cover;
+  object-position: 48% 50%;
 }
 
 .book-hero h1 {
@@ -1401,6 +1457,17 @@ section[id] {
 }
 
 @media (max-width: 880px) {
+  .book-hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .book-room-photo {
+    width: min(100%, 600px);
+    aspect-ratio: 4 / 3;
+    justify-self: center;
+    border-radius: 16px;
+  }
+
   .services-header {
     grid-template-columns: 1fr;
     gap: 20px;

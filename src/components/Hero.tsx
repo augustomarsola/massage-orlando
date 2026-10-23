@@ -45,11 +45,12 @@ export function Hero() {
         <div className="hero-visual">
           <div className="hero-image-frame">
             <Image
-              src="/spa_bg.png"
-              alt="Massage room illustration"
+              src="/images/capture-2026-10-18/lidiane-hero-0274-hq.webp"
+              alt="Lidiane at Lunelle Spa in Orlando"
               fill
               priority
-              sizes="(max-width: 760px) 100vw, 42vw"
+              unoptimized
+              sizes="(max-width: 760px) 480px, (max-width: 1020px) 600px, 680px"
               className="object-cover"
             />
           </div>

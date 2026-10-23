@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
 
@@ -31,6 +32,16 @@ export function YourVisit() {
           </TrackedLink>
         </div>
         <div className="visit-details">
+          <figure className="visit-room-photo">
+            <Image
+              src="/images/capture-2026-10-18/lunelle-treatment-room-hq.webp"
+              alt="The treatment room at Lunelle Spa, with the massage table ready for a visit"
+              width={2048}
+              height={1536}
+              quality={90}
+              sizes="(max-width: 880px) 100vw, 540px"
+            />
+          </figure>
           {visitDetails.map((detail) => (
             <article className="visit-detail" key={detail.title}>
               <h3>{detail.title}</h3>

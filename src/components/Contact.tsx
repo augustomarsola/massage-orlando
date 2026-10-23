@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
 
@@ -5,13 +6,24 @@ export function ContactSection() {
   return (
     <section id="location" className="section location-section">
       <div className="container location-grid">
-        <div className="map-frame">
-          <iframe
-            title="Map to Lunelle Spa in Orlando"
-            src={`https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed`}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+        <div className="location-visual">
+          <Image
+            className="location-building-photo"
+            src="/images/capture-2026-10-18/studio-plaza-5979-hq.webp"
+            alt="Studio Plaza building at 5979 Vineland Road, where Lunelle Spa is in Suite 304"
+            width={2048}
+            height={1536}
+            quality={90}
+            sizes="(max-width: 880px) 100vw, 640px"
           />
+          <div className="map-frame">
+            <iframe
+              title="Map to Lunelle Spa in Orlando"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
         <div className="location-copy">
           <p className="eyebrow eyebrow-light">Visit Lunelle Spa</p>

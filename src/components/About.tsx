@@ -7,10 +7,11 @@ export function AboutSection() {
       <div className="container about-panel">
         <div className="about-mark">
           <Image
-            src="/lidiane-fernandes.webp"
+            src="/images/capture-2026-10-18/lidiane-lunelle-portrait-hq.webp"
             alt="Lidiane Fernandes at Lunelle Spa in Orlando"
             fill
-            sizes="(max-width: 860px) 100vw, 38vw"
+            quality={95}
+            sizes="(max-width: 760px) 480px, 600px"
             className="about-portrait"
           />
           <p className="about-photo-label">

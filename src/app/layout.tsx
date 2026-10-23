@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/spa_bg.png",
-        width: 1536,
-        height: 1024,
-        alt: "Massage room illustration",
+        url: "/images/capture-2026-10-18/lunelle-preparing-room-hq.webp",
+        width: 2048,
+        height: 1536,
+        alt: "Lidiane preparing the massage table at Lunelle Spa in Orlando",
       },
     ],
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Massage in Orlando | Lunelle Spa",
     description: site.description,
-    images: ["/spa_bg.png"],
+    images: ["/images/capture-2026-10-18/lunelle-preparing-room-hq.webp"],
   },
 };
 
