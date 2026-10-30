@@ -7,6 +7,7 @@
   --cream-light: #fffaf3;
   --taupe: #b8a99a;
   --gold: #c9a86a;
+  --gold-text: #806332;
   --sage: #a8b7a2;
   --ink: #263446;
   --line: rgba(30, 42, 58, 0.16);
@@ -565,7 +566,7 @@ section[id] {
 }
 
 .service-number {
-  color: var(--gold);
+  color: var(--gold-text);
   font-family: var(--font-display), serif;
   font-size: var(--text-body);
   letter-spacing: 0.12em;
@@ -815,7 +816,7 @@ section[id] {
 }
 
 .process-step span {
-  color: var(--gold);
+  color: var(--gold-text);
   font-family: var(--font-display), serif;
   font-size: 1.1rem;
 }
@@ -911,7 +912,7 @@ section[id] {
 .about-copy p {
   max-width: 650px;
   margin: 24px 0;
-  color: rgba(30, 42, 58, 0.78);
+  color: var(--midnight);
   line-height: 1.8;
 }
 
@@ -1289,8 +1290,8 @@ section[id] {
   background: var(--cream);
 }
 
-.choice-card span {
-  color: var(--gold);
+.choice-card > span {
+  color: var(--gold-text);
   font-family: var(--font-display), serif;
   font-size: var(--text-label);
 }
@@ -1331,6 +1332,7 @@ section[id] {
 
 .book-final .section-intro {
   margin: 0 auto 32px;
+  color: var(--midnight);
 }
 
 .choice-card .service-helper {
@@ -1467,7 +1469,7 @@ section[id] {
   }
 
   .book-room-photo {
-    width: min(100%, 600px);
+    width: min(100%, 560px);
     aspect-ratio: 4 / 3;
     justify-self: center;
     border-radius: 16px;

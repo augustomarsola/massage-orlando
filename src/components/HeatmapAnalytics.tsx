@@ -116,7 +116,7 @@ export function HeatmapAnalytics() {
         onClick={() => setOpen(false)}>×</button>
       <h2 id="interaction-recording-title">Your privacy</h2>
       <p>With your permission, we use optional cookies and session recordings to improve this site.{" "}
-        <a href="/privacy">Learn more</a></p>
+        <a href="/privacy">Privacy details</a></p>
       <div className={styles.actions}>
         {choice !== null && <button type="button" onClick={() => setOpen(false)}>Close</button>}
         <button type="button" onClick={() => choose("denied")}>Decline</button>
