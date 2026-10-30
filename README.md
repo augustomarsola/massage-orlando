@@ -92,6 +92,12 @@ Opening the dialog emits `contact_options_opened`, not `cta_sms_clicked`. The ch
 
 ## Quality Checks
 
+### Image delivery and contrast — October 30, 2026
+
+The hero and About portraits use responsive Next.js image delivery at quality 95 and 90 respectively, keeping their approved originals intact. Hero sizing accounts for its tall cover crop; the room image uses quality 85 and a crop-aware responsive size. Keep the default image width candidates: the smaller 480px portrait was visually too soft during review. Do not restore `unoptimized`, cap high-density screens to a single small image, or overwrite the source photos to reduce transfer size. Compare face, hair, fabric and room detail at actual display sizes before lowering quality further.
+
+Text on cream uses the darker `--gold-text` for service/step numbers; `--gold` stays decorative. About copy and the final booking paragraph use solid midnight on sage. Keep the privacy notice link descriptive (`Privacy details`). These are local fixes, not a claim of new production PageSpeed scores.
+
 ### Readability
 
 Customer feedback on October 7, 2026 identified small website text. Preserve the Cinzel/Montserrat brand pairing while prioritizing comfortable reading:

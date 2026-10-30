@@ -79,8 +79,8 @@ export default function BookPage() {
                 alt="The real treatment room at Lunelle Spa in Orlando"
                 fill
                 priority
-                quality={95}
-                sizes="(max-width: 880px) 100vw, 850px"
+                quality={85}
+                sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) 560px, (max-width: 1220px) calc(47.6vw - 20px), 560px"
               />
             </figure>
           </div>

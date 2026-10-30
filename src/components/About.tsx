@@ -10,8 +10,8 @@ export function AboutSection() {
             src="/images/capture-2026-10-18/lidiane-about-retouched-v3.webp"
             alt="Lidiane Fernandes at Lunelle Spa in Orlando"
             fill
-            unoptimized
-            sizes="(max-width: 760px) 480px, 600px"
+            quality={90}
+            sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1220px) 36vw, 425px"
             className="about-portrait"
           />
           <p className="about-photo-label">
