@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
 import { ContactLink } from "./ContactLink";
+import { HeatmapPreferences } from "./HeatmapAnalytics";
 
 export function Footer() {
   return (
@@ -55,6 +56,8 @@ export function Footer() {
             </li>
             <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
             <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
+            <li><a href="/privacy">Privacy information</a></li>
+            <HeatmapPreferences />
           </ul>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { HeatmapAnalytics } from "@/components/HeatmapAnalytics";
 import { site } from "@/components/site";
 import "./globals.css";
 
@@ -68,9 +69,10 @@ export default function RootLayout({
       className={`${cinzel.variable} ${montserrat.variable}`}
       data-scroll-behavior="smooth"
     >
-      <body>
+      <body data-clarity-mask="true">
         {children}
         <GoogleAnalytics />
+        <HeatmapAnalytics />
       </body>
     </html>
   );
