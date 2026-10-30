@@ -71,16 +71,87 @@ export const serviceFamilies = [
   },
 ] as const;
 
-// Keep the verified profile URL until the new service has a verified direct link.
-// Price, duration, and availability remain in Booksy.
-export const skinCareService = {
-  title: "Microneedling",
-  trackingName: "Microneedling",
-  description:
-    "A facial skin treatment to improve the appearance of uneven texture and fine lines.",
-  note: "Results and recovery time vary. Contact us with questions before booking.",
-  bookingUrl: site.booksy,
-} as const;
+// October 25 handoff. No service-specific URLs or published availability assumed.
+// Keep false until the saved Booksy catalog, proposed prices and Acne Scars intent
+// have been checked. Planned services must not become structured-data offers.
+export const skinCareCatalogVerified = false;
+
+export type SkinCareOption = {
+  id: string;
+  title: string;
+  trackingName: string;
+  label: string;
+  price: number;
+  proposedPrice: boolean;
+  description: string;
+  helper: string;
+  note?: string;
+};
+
+type SkinCareFamily = {
+  id: string;
+  number: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+  note?: string;
+  options: readonly SkinCareOption[];
+};
+
+export const skinCareFamilies: readonly SkinCareFamily[] = [
+  {
+    id: "deep-cleansing", number: "05", title: "Deep Cleansing Facial",
+    image: "/images/skin-care-2026-10-25/cleansing-illustration.webp",
+    imageAlt: "Illustrative scene of an adult woman receiving gentle facial cleansing with a cotton pad",
+    options: [{
+      id: "deep-cleansing", title: "Deep Cleansing Facial", trackingName: "Deep Cleansing Facial", label: "Deep Cleansing Facial",
+      price: 80, proposedPrice: false,
+      description: "A personalized facial focused on deep cleansing and a fresh, cared-for feel. Care is tailored to your skin's needs.",
+      helper: "Cleansing · Personalized skin care",
+    }],
+  },
+  {
+    id: "acne-care", number: "06", title: "Acne Care Facial",
+    image: "/images/skin-care-2026-10-25/acne-care-illustration.webp",
+    imageAlt: "Illustrative cosmetic skin consultation with an adult woman with natural blemishes",
+    options: [{
+      id: "acne-care", title: "Acne Care Facial", trackingName: "Acne Care Facial", label: "Acne Care Facial",
+      price: 120, proposedPrice: false,
+      description: "Facial care for skin prone to congestion and blemishes, with a focus on cleansing and individual skin needs.",
+      helper: "Congestion · Blemish-prone skin",
+      note: "Cosmetic skin care does not replace dermatology care.",
+    }],
+  },
+  {
+    id: "microneedling", number: "07", title: "Microneedling",
+    image: "/images/skin-care-2026-10-25/microneedling-illustration.webp",
+    imageAlt: "Illustrative still life of folded towels, unused gloves and a closed unbranded container",
+    note: "Suitability is assessed before treatment. Results vary.",
+    options: [
+      {
+        id: "skin-rejuvenation", title: "Microneedling – Skin Rejuvenation", trackingName: "Microneedling – Skin Rejuvenation", label: "Skin Rejuvenation",
+        price: 100, proposedPrice: true,
+        description: "Microneedling focused on the appearance of fine lines and uneven texture.",
+        helper: "Fine lines · Uneven texture",
+      },
+      {
+        id: "acne-scars", title: "Microneedling – Acne Scars", trackingName: "Microneedling – Acne Scars", label: "Acne Scars",
+        price: 100, proposedPrice: true,
+        description: "Microneedling focused on the appearance of acne scars and uneven skin texture.",
+        helper: "Acne scars · Uneven texture",
+        note: "Not intended for active acne or inflamed breakouts.",
+      },
+      {
+        id: "pdrn", title: "Microneedling with PDRN (Salmon DNA)", trackingName: "Microneedling with PDRN (Salmon DNA)", label: "PDRN (Salmon DNA)",
+        price: 250, proposedPrice: false,
+        description: "Explore our PDRN (Salmon DNA) microneedling option, often called a “salmon sperm” facial.",
+        helper: "PDRN · Salmon DNA",
+      },
+    ],
+  },
+];
+
+export const skinCareDuration = "80 min";
 
 // Public Booksy snapshot, checked 2026-10-08. Recheck before future releases.
 // Keep the live reviews link visible; these values are not automatically synced.

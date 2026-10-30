@@ -49,6 +49,7 @@ export function Hero() {
               alt="Lidiane at Lunelle Spa in Orlando"
               fill
               priority
+              fetchPriority="high"
               quality={95}
               // Allow for the tall cover crop as well as the visible frame width.
               sizes="(max-width: 760px) max(334px, calc(100vw - 50px)), (max-width: 1020px) 576px, 480px"

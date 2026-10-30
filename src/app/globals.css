@@ -655,40 +655,43 @@ section[id] {
 }
 
 .skin-care-services {
-  margin-top: clamp(56px, 6vw, 80px);
+  margin-top: clamp(64px, 7vw, 100px);
 }
 
-.skin-care-heading {
-  margin: 0 0 26px;
-  color: var(--midnight);
-  font-size: clamp(1.6rem, 2.5vw, 2rem);
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.skin-care-service {
+.skin-care-family > *, .skin-care-option { min-width: 0; }
+.skin-care-options {
+  grid-column: 2 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-  align-items: center;
-  gap: 36px;
-  padding-block: 30px;
-  border-block: 1px solid var(--line);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
 }
+.skin-care-option { display: flex; flex-direction: column; padding: 24px; background: var(--cream); }
+.skin-care-option + .skin-care-option { border-left: 1px solid var(--line); }
+.skin-care-option-title { margin: 0 0 14px; color: var(--midnight); font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+.skin-care-option .service-description { font-size: var(--text-body); }
+.skin-care-option .service-helper { margin: 18px 0 0; }
+.skin-care-option .service-cta { align-self: flex-start; margin-top: auto; padding-top: 24px; }
+.skin-care-shared-note { grid-column: 1 / -1; margin: 22px 0 0; color: var(--midnight); font-size: var(--text-label); line-height: 1.7; }
+.skin-care-card-copy { display: flex; flex-direction: column; flex: 1; width: 100%; }
+.skin-care-card-copy > .text-link { align-self: flex-start; }
+.skin-care-book-family { grid-column: 1 / -1; }
+.skin-care-book-family .skin-care-card-copy { flex: none; }
+.skin-care-book-family .skin-care-options { margin-top: 12px; }
+.skin-care-book-family .skin-care-option { padding: 24px; }
+.skin-care-book-family .skin-care-option:first-child { padding-left: 0; }
+.skin-care-book-family .skin-care-option:last-of-type { padding-right: 0; }
+.choice-card .skin-care-shared-note { flex: none; margin: 24px 0 0; font-size: var(--text-label); }
 
-.skin-care-booking p {
-  margin: 0 0 20px;
-  color: var(--ink);
-  font-size: var(--text-label);
-  line-height: 1.7;
+@media (max-width: 1020px) {
+  .skin-care-options { grid-template-columns: 1fr; }
+  .skin-care-option + .skin-care-option { border-left: 0; border-top: 1px solid var(--line); }
+  .skin-care-book-family .skin-care-option { padding: 24px 0; }
 }
 
 @media (max-width: 760px) {
-  .skin-care-service {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 28px;
-  }
+  .skin-care-options { grid-column: 1 / -1; }
+  .skin-care-option { padding: 24px 20px; }
 }
-
 .packages-section {
   position: relative;
   background: var(--midnight-deep);
@@ -1249,6 +1252,22 @@ section[id] {
   object-fit: cover;
   object-position: 50% 65%;
   filter: none;
+}
+
+.book-services-intro { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 48px; align-items: center; }
+.book-treatment-photo { margin: 0; }
+.book-treatment-photo img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.book-provider { display: grid; justify-items: start; gap: 18px; margin: 32px 0 0; }
+.book-provider-photo { position: relative; width: min(100%, 280px); aspect-ratio: 4 / 5; border-radius: 140px 140px 18px 18px; overflow: hidden; }
+.book-provider-photo img { object-fit: cover; object-position: 50% 25%; }
+.book-provider figcaption { min-width: 0; font-size: var(--text-label); color: var(--midnight); line-height: 1.7; }
+.book-provider figcaption strong, .book-provider figcaption span { display: block; }
+
+@media (max-width: 600px) {
+  .book-services-intro { grid-template-columns: 1fr; gap: 24px; }
+  .book-treatment-photo { max-width: 360px; }
+  .book-provider { grid-template-columns: 140px minmax(0, 1fr); align-items: center; }
+  .book-provider-photo { width: 140px; border-radius: 70px 70px 12px 12px; }
 }
 
 .book-hero h1 {

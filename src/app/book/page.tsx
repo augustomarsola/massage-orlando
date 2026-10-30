@@ -12,7 +12,7 @@ import { BooksyReviews } from "@/components/BooksyReviews";
 import { SkinCareServices } from "@/components/SkinCareServices";
 
 const bookDescription =
-  "Book massage or microneedling at Lunelle Spa in Orlando. View services, prices, and available times on Booksy. English, Spanish, and Portuguese spoken.";
+  "Plan your visit to Lunelle Spa in Orlando. Explore massage and skin care, then view the current menu, prices, and available times on Booksy.";
 
 export const metadata: Metadata = {
   title: "Book Massage & Skin Care in Orlando",
@@ -46,8 +46,8 @@ export default function BookPage() {
               <p className="eyebrow eyebrow-light">Lunelle Spa · Orlando</p>
               <h1 className="display">Book your visit in Orlando.</h1>
               <p>
-                Choose a massage or microneedling appointment. View our full menu,
-                prices, and available times on Booksy.
+                Explore massage and facial skin care in a calm, welcoming space.
+                View current services, prices, and available times on Booksy.
               </p>
               <div className="button-row">
                 <TrackedLink
@@ -79,6 +79,7 @@ export default function BookPage() {
                 alt="The real treatment room at Lunelle Spa in Orlando"
                 fill
                 priority
+                fetchPriority="high"
                 quality={85}
                 sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 880px) 560px, (max-width: 1220px) calc(47.6vw - 20px), 560px"
               />
@@ -88,11 +89,20 @@ export default function BookPage() {
 
         <section className="section" id="choose">
           <div className="container">
-            <h2 className="section-title display">Massage Services</h2>
-            <p className="section-intro">
-              Relaxation, deep tissue, lymphatic drainage, and body sculpting.
-              Explore our services on Booksy.
-            </p>
+            <div className="book-services-intro">
+              <div>
+                <h2 className="section-title display">Massage Services</h2>
+                <p className="section-intro">
+                  Relaxation, deep tissue, lymphatic drainage, and body sculpting.
+                  Explore our services on Booksy.
+                </p>
+              </div>
+              <figure className="book-treatment-photo">
+                <Image src="/images/capture-2026-10-18/lunelle-massage-model-0354-hq.webp"
+                  alt="A posed massage session with a model at Lunelle Spa" width={1536} height={1050}
+                  quality={90} sizes="(max-width: 600px) calc(100vw - 32px), 250px" />
+              </figure>
+            </div>
             <div className="choice-grid">
               {serviceFamilies.map((service) => (
                 <article className="choice-card" key={service.title}>
@@ -114,7 +124,7 @@ export default function BookPage() {
                 </article>
               ))}
             </div>
-            <SkinCareServices placement="book_skin_care" />
+            <SkinCareServices placement="book_skin_care" presentation="booking" />
             <div className="service-contact">
               Questions about a service?{" "}
               <ContactLink placement="book_services_help" desktopLabel="Contact us">Text us</ContactLink>.
@@ -128,6 +138,14 @@ export default function BookPage() {
           <div className="container process-grid">
             <div className="book-proof-heading">
               <h2 className="section-title display">Client Reviews</h2>
+              <figure className="book-provider">
+                <div className="book-provider-photo">
+                  <Image src="/images/capture-2026-10-18/lidiane-about-retouched-v3.webp"
+                    alt="Lidiane Fernandes at Lunelle Spa" fill quality={90}
+                    sizes="(max-width: 600px) 140px, 280px" />
+                </div>
+                <figcaption><strong>Lidiane Fernandes</strong><span>Lunelle Spa · Orlando</span></figcaption>
+              </figure>
             </div>
             <div className="book-proof-copy">
               <BooksyReviews placement="book_reviews" />
