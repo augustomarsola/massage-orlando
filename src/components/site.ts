@@ -73,11 +73,6 @@ export const serviceFamilies = [
   },
 ] as const;
 
-// October 25 handoff. No service-specific URLs or published availability assumed.
-// Keep false until the saved Booksy catalog, proposed prices and Acne Scars intent
-// have been checked. Planned services must not become structured-data offers.
-export const skinCareCatalogVerified = false;
-
 export type SkinCareOption = {
   id: string;
   title: string;

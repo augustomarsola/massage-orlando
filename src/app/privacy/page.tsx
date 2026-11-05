@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       <main className="section">
         <article className="container" style={{ maxWidth: "50rem" }}>
           <h1 className="section-title display">Website privacy information</h1>
-          <p className="section-intro">Updated October 30, 2026</p>
+          <p className="section-intro">Updated <time dateTime="2026-11-04">November 4, 2026</time></p>
           <h2>Website analytics</h2>
           <p>We use Google Analytics to understand website visits, traffic sources, and interactions
             with links to booking and contact options. A click on a booking link does not tell us

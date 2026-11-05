@@ -1951,6 +1951,19 @@ section[id] {
   }
 }
 
+.missing-page {
+  display: grid;
+  align-items: center;
+  min-height: 100svh;
+}
+
+.missing-page-inner {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  max-width: 48rem;
+}
+
 .appointment-request {
   background: var(--cream-light);
   border-block: 1px solid var(--line);

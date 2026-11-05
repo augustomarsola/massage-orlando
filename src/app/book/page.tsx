@@ -48,7 +48,7 @@ export default function BookPage() {
               <p className="eyebrow eyebrow-light">Lunelle Spa · Orlando</p>
               <h1 className="display">Book your visit in Orlando.</h1>
               <p>
-                Explore massage and facial skin care in a calm, welcoming space.
+                Explore massage and facial skin care in a calm, welcoming space.{" "}
                 {appointmentEnabled ? "Request a visit and we’ll help you arrange a time." : "View current services, prices, and available times on Booksy."}
               </p>
               <div className="button-row">
