@@ -3,11 +3,9 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { PageSections } from "@/components/PageSections";
-import { serviceFamilies, site, skinCareFamilies, skinCareCatalogVerified } from "@/components/site";
+import { serviceFamilies, site, skinCareFamilies } from "@/components/site";
 
-const verifiedSkinCareServices = skinCareCatalogVerified
-  ? skinCareFamilies.flatMap((family) => family.options)
-  : [];
+const skinCareServices = skinCareFamilies.flatMap((family) => family.options);
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -51,8 +49,8 @@ const localBusinessSchema = {
   sameAs: [site.booksy],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: skinCareCatalogVerified ? "Massage & Skin Care Services" : "Massage Services",
-    itemListElement: [...serviceFamilies, ...verifiedSkinCareServices].map((service) => ({
+    name: "Massage & Skin Care Services",
+    itemListElement: [...serviceFamilies, ...skinCareServices].map((service) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
