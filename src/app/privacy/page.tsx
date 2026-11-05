@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/components/site";
+import { appointmentEnabled, appointmentSiteKey } from "@/components/appointment-preview";
 
 export const metadata: Metadata = {
   title: "Website Privacy Information",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="page-shell">
-      <Header compact />
+      <Header page="privacy" requestEnabled={appointmentEnabled} />
       <main className="section">
         <article className="container" style={{ maxWidth: "50rem" }}>
           <h1 className="section-title display">Website privacy information</h1>
@@ -38,6 +39,10 @@ export default function PrivacyPage() {
           <p><a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">
             Microsoft Privacy Statement</a></p>
           <h2>Booking and contact services</h2>
+          {appointmentSiteKey && <p>When you request an appointment on our website, we use your name,
+            phone number, selected service, and preferred date if provided to contact you about your request. Resend delivers
+            these details by email to our team. Cloudflare Turnstile helps protect the form from
+            automated abuse. We do not send your form answers to our website analytics tools.</p>}
           <p>Booking takes place on Booksy. WhatsApp, email, and phone or text services open outside
             this website. Those services have their own privacy practices; our website recordings
             do not follow you into them. This notice covers the public website, not clinical records

@@ -1,3 +1,5 @@
+import { appointmentEnabled } from "./appointment-preview";
+
 export const site = {
   name: "Lunelle Spa",
   tagline: "Massage & Wellness · Orlando",
@@ -167,7 +169,9 @@ export const faqs = [
   {
     question: "How do I book an appointment?",
     answer:
-      "Choose your service and an available time on Booksy, then follow the steps to confirm your appointment.",
+      appointmentEnabled
+        ? "Send an appointment request and we’ll call or text you to arrange and confirm a time. You can also choose an available time and book directly through Booksy."
+        : "Choose your service and an available time on Booksy, then follow the steps to confirm your appointment.",
   },
   {
     question: "Where can I see prices and session lengths?",

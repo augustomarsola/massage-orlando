@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { site } from "./site";
 import { TrackedLink } from "./TrackedLink";
+import { AppointmentLink } from "@/components/AppointmentRequest";
+import { appointmentEnabled } from "@/components/appointment-preview";
 import { ContactLink } from "./ContactLink";
 
 export function Hero() {
@@ -14,19 +16,23 @@ export function Hero() {
           </h1>
           <p className="hero-lede">
             Take a break from stress and muscle tension. Explore our massage,
-            lymphatic drainage, and body sculpting services in a calm, welcoming space.
+            lymphatic drainage, and body sculpting in a calm, welcoming space. We also offer facials and skin care.
           </p>
           <div className="button-row">
-            <TrackedLink
-              href={site.booksy}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button button-primary"
-              eventName="cta_booksy_clicked"
-              eventParams={{ placement: "hero" }}
-            >
-              Book Now <span aria-hidden="true">↗</span>
-            </TrackedLink>
+            {appointmentEnabled ? (
+              <AppointmentLink className="button button-primary" />
+            ) : (
+              <TrackedLink
+                href={site.booksy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-primary"
+                eventName="cta_booksy_clicked"
+                eventParams={{ placement: "hero" }}
+              >
+                Book Now <span aria-hidden="true">↗</span>
+              </TrackedLink>
+            )}
             <ContactLink
               className="button button-outline"
               placement="hero"
@@ -35,7 +41,7 @@ export function Hero() {
               Text Us
             </ContactLink>
           </div>
-          <p className="booking-support">Online booking through Booksy.</p>
+          <p className="booking-support">{appointmentEnabled ? "We’ll call or text to confirm your visit." : "Online booking through Booksy."}</p>
           <p className="hero-trust">
             English · <span lang="es">Español</span> · <span lang="pt">Português</span>
             <br />5979 Vineland Rd · By appointment
