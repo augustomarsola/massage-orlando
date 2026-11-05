@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { site } from "./site";
+import { AppointmentLink } from "@/components/AppointmentRequest";
+import { appointmentEnabled } from "@/components/appointment-preview";
 import { TrackedLink } from "./TrackedLink";
 
 const visitDetails = [
@@ -20,16 +22,20 @@ export function YourVisit() {
             At Lunelle Spa, your visit is time for you. Settle into a calm space
             and enjoy a massage with personal attention.
           </p>
-          <TrackedLink
-            href={site.booksy}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button-cream"
-            eventName="cta_booksy_clicked"
-            eventParams={{ placement: "your_visit" }}
-          >
-            Book Now <span aria-hidden="true">↗</span>
-          </TrackedLink>
+          {appointmentEnabled ? (
+            <AppointmentLink className="button button-cream" />
+          ) : (
+            <TrackedLink
+              href={site.booksy}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-cream"
+              eventName="cta_booksy_clicked"
+              eventParams={{ placement: "your_visit" }}
+            >
+              Book Now <span aria-hidden="true">↗</span>
+            </TrackedLink>
+          )}
         </div>
         <div className="visit-details">
           <figure className="visit-room-photo">

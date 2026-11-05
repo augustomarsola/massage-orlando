@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { site } from "./site";
+import { AppointmentLink } from "@/components/AppointmentRequest";
+import { appointmentEnabled } from "@/components/appointment-preview";
 import { TrackedLink } from "./TrackedLink";
 
 export function ContactSection() {
@@ -31,7 +33,7 @@ export function ContactSection() {
             Massage <span className="location-title-phrase">in Orlando,</span>{" "}
             <span className="location-title-phrase">on Vineland</span> Road.
           </h2>
-          <p className="location-intro">Appointments available throughout the week. View available times on Booksy.</p>
+          <p className="location-intro">{appointmentEnabled ? "Contact us to plan your visit." : "Appointments available throughout the week. View available times on Booksy."}</p>
           <div className="location-detail">
             <small>Address</small>
             <a href={site.mapsHref} target="_blank" rel="noopener noreferrer">
@@ -55,16 +57,20 @@ export function ContactSection() {
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </div>
           <div className="button-row location-actions">
-            <TrackedLink
-              href={site.booksy}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button button-cream"
-              eventName="cta_booksy_clicked"
-              eventParams={{ placement: "location" }}
-            >
-              Book Now <span aria-hidden="true">↗</span>
-            </TrackedLink>
+            {appointmentEnabled ? (
+              <AppointmentLink className="button button-cream" />
+            ) : (
+              <TrackedLink
+                href={site.booksy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-cream"
+                eventName="cta_booksy_clicked"
+                eventParams={{ placement: "location" }}
+              >
+                Book Now <span aria-hidden="true">↗</span>
+              </TrackedLink>
+            )}
             <a
               href={site.mapsHref}
               target="_blank"

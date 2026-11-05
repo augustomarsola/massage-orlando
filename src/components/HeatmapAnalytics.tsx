@@ -110,17 +110,17 @@ export function HeatmapAnalytics() {
 
   if (!configured || !ready || !open) return null;
   return (
-    <section className={styles.notice} aria-labelledby="interaction-recording-title"
+    <section className={`${styles.notice}${allowedPage ? ` ${styles.aboveActions}` : ""}`} aria-labelledby="interaction-recording-title"
       data-clarity-mask="true">
       <button type="button" className={styles.dismiss} aria-label="Close privacy notice"
         onClick={() => setOpen(false)}>×</button>
       <h2 id="interaction-recording-title">Your privacy</h2>
-      <p>With your permission, we use optional cookies and session recordings to improve this site.{" "}
+      <p>Allow optional cookies and session recordings?{" "}
         <a href="/privacy">Privacy details</a></p>
       <div className={styles.actions}>
         {choice !== null && <button type="button" onClick={() => setOpen(false)}>Close</button>}
         <button type="button" onClick={() => choose("denied")}>Decline</button>
-        <button type="button" className={styles.accept} onClick={() => choose("granted")}>Accept</button>
+        <button type="button" onClick={() => choose("granted")}>Accept</button>
       </div>
     </section>
   );

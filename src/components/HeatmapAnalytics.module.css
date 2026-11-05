@@ -31,9 +31,8 @@
   font-size: 1rem;
   cursor: pointer;
 }
-.actions .accept {
-  background: var(--midnight);
-  color: var(--cream);
+.actions button:hover {
+  background: var(--cream-light);
 }
 .dismiss {
   position: absolute;
@@ -54,6 +53,13 @@
 }
 .dismiss:hover { background: #1e2a3a0d; }
 .notice :focus-visible { outline: 3px solid var(--midnight); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .notice { padding: 0.75rem; }
+  .aboveActions {
+    bottom: calc(4.625rem + env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - 5.625rem - env(safe-area-inset-bottom, 0px));
+  }
+}
 .preferenceLink {
   padding: 0;
   border: 0;

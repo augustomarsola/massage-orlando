@@ -1,3 +1,4 @@
+import { appointmentEnabled } from "@/components/appointment-preview";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileActionBar } from "@/components/MobileActionBar";
@@ -72,7 +73,7 @@ export default function Home() {
           __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <Header />
+      <Header requestEnabled={appointmentEnabled} />
       <main>
         <PageSections />
       </main>

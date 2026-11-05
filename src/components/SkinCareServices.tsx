@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { site, skinCareFamilies, type SkinCareOption } from "./site";
+import { AppointmentLink } from "@/components/AppointmentRequest";
+import { appointmentEnabled } from "@/components/appointment-preview";
 import { TrackedLink } from "./TrackedLink";
 
 function ServiceDetails({ option, placement, grouped = false, showHelper = true }: {
@@ -11,17 +13,21 @@ function ServiceDetails({ option, placement, grouped = false, showHelper = true 
       <p className="service-description">{option.description}</p>
       {showHelper && <p className="service-helper">{option.helper}</p>}
       {option.note && <p className="service-note">{option.note}</p>}
-      <TrackedLink
-        href={site.booksy}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-link service-cta"
-        aria-label={`View services on Booksy: ${option.title}`}
-        eventName="cta_booksy_clicked"
-        eventParams={{ placement, service: option.trackingName }}
-      >
-        View Services <span aria-hidden="true">↗</span>
-      </TrackedLink>
+      {appointmentEnabled ? (
+        <AppointmentLink className="text-link service-cta" service={option.title} label="Request this service" />
+      ) : (
+        <TrackedLink
+          href={site.booksy}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-link service-cta"
+          aria-label={`View services on Booksy: ${option.title}`}
+          eventName="cta_booksy_clicked"
+          eventParams={{ placement, service: option.trackingName }}
+        >
+          View Services <span aria-hidden="true">↗</span>
+        </TrackedLink>
+      )}
     </>
   );
 }

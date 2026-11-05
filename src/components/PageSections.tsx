@@ -4,6 +4,8 @@ import { YourVisit } from "./YourVisit";
 import { Hero } from "./Hero";
 import { PackagesSection } from "./Packages";
 import { ReviewsFaq } from "./ReviewsFaq";
+import { AppointmentRequest } from "@/components/AppointmentRequest";
+import { appointmentEnabled } from "@/components/appointment-preview";
 import { ServicesSection } from "./Services";
 
 export function PageSections() {
@@ -18,6 +20,7 @@ export function PageSections() {
         </div>
       </div>
       <ServicesSection />
+      {appointmentEnabled && <AppointmentRequest placement="home_request" />}
       <YourVisit />
       <PackagesSection />
       <AboutSection />

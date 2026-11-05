@@ -60,8 +60,14 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 4px;
+  outline: 3px solid var(--midnight-deep);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--cream-light);
+}
+
+button:enabled,
+summary {
+  cursor: pointer;
 }
 
 section[id] {
@@ -1693,8 +1699,9 @@ section[id] {
     color: var(--cream);
     font-size: var(--text-label);
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    line-height: 1.15;
+    text-align: center;
+    padding-inline: 0.25rem;
   }
 
   .mobile-action-bar > a:first-child {
@@ -1941,5 +1948,104 @@ section[id] {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+.appointment-request {
+  background: var(--cream-light);
+  border-block: 1px solid var(--line);
+}
+
+.appointment-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.appointment-alternative {
+  margin-top: 1.5rem;
+  font-size: var(--text-label);
+}
+
+.appointment-form {
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--cream);
+}
+
+.appointment-form fieldset {
+  min-width: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.appointment-field {
+  display: grid;
+  gap: 0.3rem;
+  font-size: var(--text-label);
+}
+
+.appointment-field label {
+  font-weight: 600;
+}
+
+.appointment-field :is(input, select) {
+  min-height: 3rem;
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--gold-text);
+  border-radius: 0.375rem;
+  padding: 0.65rem;
+  background: var(--cream-light);
+}
+
+.appointment-form button {
+  justify-self: start;
+}
+
+.appointment-form button:disabled {
+  cursor: wait;
+}
+
+.appointment-privacy,
+.appointment-preview-note,
+.appointment-error,
+.appointment-success {
+  font-size: var(--text-label);
+}
+
+.appointment-preview-note {
+  margin-bottom: 1rem;
+}
+
+.appointment-form a {
+  text-decoration: underline;
+}
+
+.appointment-success,
+.appointment-form [role="alert"] .appointment-error {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+}
+
+.appointment-success {
+  background: #e5ede3;
+  color: #243d2b;
+}
+
+.appointment-error {
+  color: #812d23;
+}
+
+.appointment-form [role="alert"] .appointment-error {
+  background: #fae9e4;
+}
+
+@media (max-width: 760px) {
+  .appointment-layout {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

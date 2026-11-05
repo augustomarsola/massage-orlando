@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "./site";
+import { AppointmentLink } from "@/components/AppointmentRequest";
 import { TrackedLink } from "./TrackedLink";
 
 type HeaderProps = {
-  compact?: boolean;
+  page?: "home" | "book" | "privacy";
+  requestEnabled?: boolean;
 };
 
 const navigation = [
@@ -18,7 +20,7 @@ const navigation = [
   { href: "/#location", label: "Location" },
 ] as const;
 
-export function Header({ compact = false }: HeaderProps) {
+export function Header({ page = "home", requestEnabled = false }: HeaderProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -36,8 +38,6 @@ export function Header({ compact = false }: HeaderProps) {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  const visibleNavigation = compact ? navigation.slice(0, 1) : navigation;
 
   return (
     <header className="site-header">
@@ -58,23 +58,27 @@ export function Header({ compact = false }: HeaderProps) {
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
-          {visibleNavigation.map((item) => (
+          {navigation.map((item) => (
             <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <TrackedLink
-          href={site.booksy}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="button button-primary header-book-button"
-          eventName="cta_booksy_clicked"
-          eventParams={{ placement: compact ? "book_header" : "site_header" }}
-        >
-          Book Now <span aria-hidden="true">↗</span>
-        </TrackedLink>
+        {requestEnabled ? (
+          <AppointmentLink className="button button-primary header-book-button" fromPrivacy={page === "privacy"} />
+        ) : (
+          <TrackedLink
+            href={site.booksy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button-primary header-book-button"
+            eventName="cta_booksy_clicked"
+            eventParams={{ placement: page === "home" ? "site_header" : `${page}_header` }}
+          >
+            Book Now <span aria-hidden="true">↗</span>
+          </TrackedLink>
+        )}
 
         <button
           type="button"
@@ -96,22 +100,26 @@ export function Header({ compact = false }: HeaderProps) {
         className={`mobile-menu${open ? " open" : ""}`}
         aria-label="Mobile navigation"
       >
-        {visibleNavigation.map((item) => (
+        {navigation.map((item) => (
           <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
             {item.label}
           </Link>
         ))}
-        <TrackedLink
-          href={site.booksy}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="button button-primary"
-          eventName="cta_booksy_clicked"
-          eventParams={{ placement: compact ? "book_mobile_menu" : "mobile_menu" }}
-          onClick={() => setOpen(false)}
-        >
-          Book Now <span aria-hidden="true">↗</span>
-        </TrackedLink>
+        {requestEnabled ? (
+          <AppointmentLink className="button button-primary" fromPrivacy={page === "privacy"} onClick={() => setOpen(false)} />
+        ) : (
+          <TrackedLink
+            href={site.booksy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button-primary"
+            eventName="cta_booksy_clicked"
+            eventParams={{ placement: page === "home" ? "mobile_menu" : `${page}_mobile_menu` }}
+            onClick={() => setOpen(false)}
+          >
+            Book Now <span aria-hidden="true">↗</span>
+          </TrackedLink>
+        )}
       </nav>
     </header>
   );
