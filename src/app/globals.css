@@ -2004,6 +2004,12 @@ section[id] {
   font-weight: 600;
 }
 
+.appointment-date-time {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 1rem;
+}
+
 .appointment-field :is(input, select) {
   min-height: 3rem;
   min-width: 0;

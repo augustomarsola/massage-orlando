@@ -47,14 +47,26 @@ export async function POST(request: Request) {
   }
 
   if (!payload || typeof payload !== "object") return reject(400);
-  const { name, phone, service, preferredDate = "", token } = payload as Record<string, unknown>;
+  const { name, phone, service, preferredDate = "", preferredTime = "", token } = payload as Record<string, unknown>;
   if (typeof name !== "string" || !name.trim() || name.length > 60 || /[\u0000-\u001f\u007f]/.test(name)
     || typeof phone !== "string" || !/^[2-9]\d{2}[2-9]\d{6}$/.test(phone)
     || typeof service !== "string" || !services.has(service)
     || typeof preferredDate !== "string" || (preferredDate !== "" && !isFutureAppointmentDate(preferredDate))
+    || typeof preferredTime !== "string" || (preferredTime !== "" && !/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(preferredTime))
     || typeof token !== "string" || !token || token.length > 2048) return reject(400);
 
   const cleanName = name.trim().replace(/\s+/g, " ");
+  const requestDetails = [cleanName, phone, service];
+  if (preferredDate || preferredTime) requestDetails.push(preferredDate);
+  if (preferredTime) requestDetails.push(preferredTime);
+
+  const details = [`Name: ${cleanName}`, `Phone: +1${phone}`, `Service: ${service}`];
+  if (preferredDate) details.push(`Preferred date (Orlando): ${preferredDate}`);
+  if (preferredTime) {
+    const [hours, minutes] = preferredTime.split(":");
+    const hour = Number(hours);
+    details.push(`Preferred time (Orlando): ${hour % 12 || 12}:${minutes} ${hour < 12 ? "AM" : "PM"}`);
+  }
   try {
     const check = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
       method: "POST",
@@ -69,7 +81,7 @@ export async function POST(request: Request) {
 
     // Identical requests share Resend's 24-hour idempotency window.
     const key = createHmac("sha256", TURNSTILE_SECRET_KEY)
-      .update(JSON.stringify(preferredDate ? [cleanName, phone, service, preferredDate] : [cleanName, phone, service]))
+      .update(JSON.stringify(requestDetails))
       .digest("hex");
     const email = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -82,7 +94,7 @@ export async function POST(request: Request) {
         from: APPOINTMENT_FROM_EMAIL,
         to: [site.email],
         subject: "New appointment request | Lunelle Spa",
-        text: `Name: ${cleanName}\nPhone: +1${phone}\nService: ${service}${preferredDate ? `\nPreferred date (Orlando): ${preferredDate}` : ""}\n\nPlease contact the client to arrange and confirm the appointment.`,
+        text: details.join("\n") + "\n\nPlease contact the client to arrange and confirm the appointment.",
       }),
       signal: AbortSignal.timeout(8000),
     });

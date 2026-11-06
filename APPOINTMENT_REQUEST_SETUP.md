@@ -1,7 +1,7 @@
 # Configuração do formulário da Lunelle Spa
 
 O formulário envia uma notificação para `contact@lunellespa.com` com nome,
-telefone, serviço e a data desejada, quando informada. A Lidiane consulta a agenda, combina o horário e confirma
+telefone, serviço e a data e o horário desejados, quando informados. A Lidiane consulta a agenda, combina o horário e confirma
 o atendimento. A mensagem na página confirma apenas o recebimento da solicitação.
 
 ## 1. Configurar o remetente no Resend
