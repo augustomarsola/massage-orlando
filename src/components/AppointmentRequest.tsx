@@ -71,6 +71,7 @@ export function AppointmentRequest({ placement }: { placement: string }) {
   const nameRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
   const dateRef = useRef<HTMLInputElement>(null);
+  const timeRef = useRef<HTMLInputElement>(null);
   const widgetRef = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | null>(null);
   const submitting = useRef(false);
@@ -137,6 +138,7 @@ export function AppointmentRequest({ placement }: { placement: string }) {
     const form = event.currentTarget;
     const digits = phoneDigits(phoneRef.current?.value ?? "");
     const preferredDate = dateRef.current?.value ?? "";
+    const preferredTime = timeRef.current?.value ?? "";
     if (!/^[2-9]\d{2}[2-9]\d{6}$/.test(digits)) {
       setPhoneError(true);
       phoneRef.current?.focus();
@@ -161,7 +163,7 @@ export function AppointmentRequest({ placement }: { placement: string }) {
         const response = await fetch("/api/appointment-request", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name: nameRef.current?.value, phone: digits, service, preferredDate, token }),
+          body: JSON.stringify({ name: nameRef.current?.value, phone: digits, service, preferredDate, preferredTime, token }),
           signal: AbortSignal.timeout(15000),
         });
         if (!response.ok) throw new Error("Request failed");
@@ -231,14 +233,22 @@ export function AppointmentRequest({ placement }: { placement: string }) {
               </select>
             </div>
             <div className="appointment-field">
-              <label htmlFor="request-date">Preferred date (optional)</label>
-              <input ref={dateRef} id="request-date" type="date" min={minimumDate || undefined}
-                aria-invalid={dateError} aria-describedby="request-date-hint"
-                onFocus={() => setMinimumDate(earliestAppointmentDate())}
-                onChange={() => setDateError(false)}
-                onInvalid={() => setDateError(true)} />
+              <div className="appointment-date-time">
+                <div className="appointment-field">
+                  <label htmlFor="request-date">Preferred date (optional)</label>
+                  <input ref={dateRef} id="request-date" type="date" min={minimumDate || undefined}
+                    aria-invalid={dateError} aria-describedby="request-date-hint"
+                    onFocus={() => setMinimumDate(earliestAppointmentDate())}
+                    onChange={() => setDateError(false)}
+                    onInvalid={() => setDateError(true)} />
+                </div>
+                <div className="appointment-field">
+                  <label htmlFor="request-time">Preferred time (optional)</label>
+                  <input ref={timeRef} id="request-time" type="time" aria-describedby="request-date-hint" />
+                </div>
+              </div>
               <p id="request-date-hint" className={dateError ? "appointment-error" : undefined}>
-                {dateError ? "Choose a date starting tomorrow." : "Choose a date starting tomorrow. We’ll confirm availability when we contact you."}
+                {dateError ? "Choose a date starting tomorrow." : "Choose a date starting tomorrow and a time in Orlando local time. We’ll confirm availability when we contact you."}
               </p>
             </div>
             <p className="appointment-privacy">

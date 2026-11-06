@@ -40,7 +40,7 @@ export default function PrivacyPage() {
             Microsoft Privacy Statement</a></p>
           <h2>Booking and contact services</h2>
           {appointmentSiteKey && <p>When you request an appointment on our website, we use your name,
-            phone number, selected service, and preferred date if provided to contact you about your request. Resend delivers
+            phone number, selected service, and preferred date and time if provided to contact you about your request. Resend delivers
             these details by email to our team. Cloudflare Turnstile helps protect the form from
             automated abuse. We do not send your form answers to our website analytics tools.</p>}
           <p>Booking takes place on Booksy. WhatsApp, email, and phone or text services open outside
