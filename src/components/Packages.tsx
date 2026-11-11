@@ -38,7 +38,7 @@ export function PackagesSection() {
                   eventName="package_interest_clicked"
                   eventParams={{ placement: "package_card", package: item.title }}
                 >
-                  View Packages <span aria-hidden="true">↗</span>
+                  View Packages <span className="external-arrow" aria-hidden="true" />
                 </TrackedLink>
               </div>
             </article>

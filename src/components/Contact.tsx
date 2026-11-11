@@ -37,7 +37,7 @@ export function ContactSection() {
           <div className="location-detail">
             <small>Address</small>
             <a href={site.mapsHref} target="_blank" rel="noopener noreferrer">
-              5979 Vineland Rd, Suite 304<br />Orlando, FL 32819 ↗
+              5979 Vineland Rd, Suite 304<br />Orlando, FL 32819 <span className="external-arrow" aria-hidden="true" />
             </a>
           </div>
           <div className="location-detail">
@@ -68,7 +68,7 @@ export function ContactSection() {
                 eventName="cta_booksy_clicked"
                 eventParams={{ placement: "location" }}
               >
-                Book Now <span aria-hidden="true">↗</span>
+                Book Now <span className="external-arrow" aria-hidden="true" />
               </TrackedLink>
             )}
             <a
@@ -77,7 +77,7 @@ export function ContactSection() {
               rel="noopener noreferrer"
               className="button button-outline-light"
             >
-              Get Directions <span aria-hidden="true">↗</span>
+              Get Directions <span className="external-arrow" aria-hidden="true" />
             </a>
             <TrackedLink
               href={site.whatsappHref}

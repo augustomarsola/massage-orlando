@@ -39,7 +39,7 @@ export function ServicesSection() {
                     eventName="cta_booksy_clicked"
                     eventParams={{ placement: "service_family", service: service.trackingName }}
                   >
-                    View Services <span aria-hidden="true">↗</span>
+                    View Services <span className="external-arrow" aria-hidden="true" />
                   </TrackedLink>
                 )}
               </div>

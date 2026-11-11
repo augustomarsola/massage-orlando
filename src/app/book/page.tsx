@@ -63,7 +63,7 @@ export default function BookPage() {
                     eventName="cta_booksy_clicked"
                     eventParams={{ placement: "book_hero" }}
                   >
-                    Book Now <span aria-hidden="true">↗</span>
+                    Book Now <span className="external-arrow" aria-hidden="true" />
                   </TrackedLink>
                 )}
                 <ContactLink
@@ -128,7 +128,7 @@ export default function BookPage() {
                       eventName="cta_booksy_clicked"
                       eventParams={{ placement: "book_choice", service: service.trackingName }}
                     >
-                      View Services <span aria-hidden="true">↗</span>
+                      View Services <span className="external-arrow" aria-hidden="true" />
                     </TrackedLink>
                   )}
                 </article>
@@ -197,7 +197,7 @@ export default function BookPage() {
                   eventName="cta_booksy_clicked"
                   eventParams={{ placement: "book_final" }}
                 >
-                  Book Now <span aria-hidden="true">↗</span>
+                  Book Now <span className="external-arrow" aria-hidden="true" />
                 </TrackedLink>
               )}
               <ContactLink

@@ -194,7 +194,7 @@ export function AppointmentRequest({ placement }: { placement: string }) {
             Prefer to choose a time yourself?{" "}
             <TrackedLink href={site.booksy} target="_blank" rel="noopener noreferrer"
               className="text-link" eventName="cta_booksy_clicked" eventParams={{ placement }}>
-              Book online with Booksy <span aria-hidden="true">↗</span>
+              Book online with Booksy <span className="external-arrow" aria-hidden="true" />
             </TrackedLink>
           </p>
         </div>
@@ -236,15 +236,19 @@ export function AppointmentRequest({ placement }: { placement: string }) {
               <div className="appointment-date-time">
                 <div className="appointment-field">
                   <label htmlFor="request-date">Preferred date (optional)</label>
+                  <div className="appointment-temporal-control">
                   <input ref={dateRef} id="request-date" type="date" min={minimumDate || undefined}
                     aria-invalid={dateError} aria-describedby="request-date-hint"
                     onFocus={() => setMinimumDate(earliestAppointmentDate())}
                     onChange={() => setDateError(false)}
                     onInvalid={() => setDateError(true)} />
+                  </div>
                 </div>
                 <div className="appointment-field">
                   <label htmlFor="request-time">Preferred time (optional)</label>
+                  <div className="appointment-temporal-control">
                   <input ref={timeRef} id="request-time" type="time" aria-describedby="request-date-hint" />
+                  </div>
                 </div>
               </div>
               <p id="request-date-hint" className={dateError ? "appointment-error" : undefined}>

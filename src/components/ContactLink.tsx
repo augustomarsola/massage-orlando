@@ -91,7 +91,7 @@ export function ContactLink({ children, desktopLabel, className = "", placement 
           eventName="cta_whatsapp_clicked"
           eventParams={{ placement, surface: "contact_dialog" }}
         >
-          Message on WhatsApp <span aria-hidden="true">↗</span>
+          Message on WhatsApp <span className="external-arrow" aria-hidden="true" />
         </TrackedLink>
         <p className="contact-dialog-help">You may need to sign in to WhatsApp Web.</p>
         <div className="contact-phone-option">

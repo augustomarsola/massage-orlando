@@ -17,7 +17,7 @@ export function BooksyReviews({ placement }: { placement: string }) {
         eventName="cta_booksy_clicked"
         eventParams={{ placement }}
       >
-        Read Reviews <span aria-hidden="true">↗</span>
+        Read Reviews <span className="external-arrow" aria-hidden="true" />
       </TrackedLink>
     </>
   );

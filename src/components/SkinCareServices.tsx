@@ -25,7 +25,7 @@ function ServiceDetails({ option, placement, grouped = false, showHelper = true 
           eventName="cta_booksy_clicked"
           eventParams={{ placement, service: option.trackingName }}
         >
-          View Services <span aria-hidden="true">↗</span>
+          View Services <span className="external-arrow" aria-hidden="true" />
         </TrackedLink>
       )}
     </>

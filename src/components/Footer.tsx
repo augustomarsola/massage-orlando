@@ -43,7 +43,7 @@ export function Footer() {
                 eventName="cta_booksy_clicked"
                 eventParams={{ placement: "footer" }}
               >
-                Book Now ↗
+                Book Now <span className="external-arrow" aria-hidden="true" />
               </TrackedLink>
             </li>
             <li>
@@ -55,7 +55,7 @@ export function Footer() {
               </ContactLink>
             </li>
             <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
-            <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
+            <li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram <span className="external-arrow" aria-hidden="true" /></a></li>
             <li><a href="/privacy">Privacy information</a></li>
             <HeatmapPreferences />
           </ul>
