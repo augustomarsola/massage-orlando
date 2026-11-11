@@ -34,7 +34,7 @@ export function ProcessSection() {
               eventName="cta_booksy_clicked"
               eventParams={{ placement: "process" }}
             >
-              Book Now <span aria-hidden="true">↗</span>
+              Book Now <span className="external-arrow" aria-hidden="true" />
             </TrackedLink>
           </div>
         </div>

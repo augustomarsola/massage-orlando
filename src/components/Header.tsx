@@ -76,7 +76,7 @@ export function Header({ page = "home", requestEnabled = false }: HeaderProps) {
             eventName="cta_booksy_clicked"
             eventParams={{ placement: page === "home" ? "site_header" : `${page}_header` }}
           >
-            Book Now <span aria-hidden="true">↗</span>
+            Book Now <span className="external-arrow" aria-hidden="true" />
           </TrackedLink>
         )}
 
@@ -117,7 +117,7 @@ export function Header({ page = "home", requestEnabled = false }: HeaderProps) {
             eventParams={{ placement: page === "home" ? "mobile_menu" : `${page}_mobile_menu` }}
             onClick={() => setOpen(false)}
           >
-            Book Now <span aria-hidden="true">↗</span>
+            Book Now <span className="external-arrow" aria-hidden="true" />
           </TrackedLink>
         )}
       </nav>

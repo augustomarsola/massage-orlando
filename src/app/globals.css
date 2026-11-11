@@ -2022,11 +2022,79 @@ section[id] {
   background: var(--cream-light);
 }
 
-.appointment-date-time input {
-  /* iOS Safari can size padded date and time inputs wider than width: 100%. */
-  width: auto;
+.appointment-temporal-control {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid var(--gold-text);
+  border-radius: 0.375rem;
+  background: var(--cream-light);
+}
+
+.appointment-field .appointment-temporal-control input {
+  /* Keep decoration on the wrapper so iOS cannot add it to the input width. */
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1 1 0;
+  min-height: 1.7rem;
+  height: 1.7rem;
+  width: 0;
   max-width: 100%;
-  justify-self: stretch;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+}
+
+.appointment-temporal-control:has(input:focus-visible) {
+  outline: 3px solid var(--midnight-deep);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--cream-light);
+}
+
+.appointment-temporal-control input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.appointment-temporal-control input::-webkit-date-and-time-value {
+  min-height: 1.7rem;
+  text-align: left;
+}
+
+.external-arrow {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 0.85em;
+  height: 0.85em;
+  vertical-align: -0.05em;
+}
+
+.external-arrow::before {
+  position: absolute;
+  content: "";
+  width: 1em;
+  height: 0;
+  border-top: 0.1em solid currentColor;
+  left: -0.05em;
+  top: 0.42em;
+  transform: rotate(-45deg);
+}
+
+.external-arrow::after {
+  position: absolute;
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  border-top: 0.1em solid currentColor;
+  border-right: 0.1em solid currentColor;
+  top: 0.05em;
+  right: 0.05em;
 }
 
 .appointment-form button {

@@ -33,7 +33,7 @@ export function YourVisit() {
               eventName="cta_booksy_clicked"
               eventParams={{ placement: "your_visit" }}
             >
-              Book Now <span aria-hidden="true">↗</span>
+              Book Now <span className="external-arrow" aria-hidden="true" />
             </TrackedLink>
           )}
         </div>
